@@ -1,0 +1,31 @@
+h1, h2 {
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+body, html {
+    background: url('http://blackrockdigital.github.io/startbootstrap-grayscale/img/intro-bg.jpg') no-repeat right bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100%;
+
+    color: white;
+}
+
+#main {
+    padding-top: 35px;
+}
+
+.btn-primary {
+    background-color: #b8b8b8;
+    border-color: #8a8a8a;
+    width: 175px;
+    font-size: 16px;
+    margin: 10px auto 80px;
+}
