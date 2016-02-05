@@ -7,7 +7,8 @@ h2 {
 }
 
 body, html {
-    background: url('http://blackrockdigital.github.io/startbootstrap-grayscale/img/intro-bg.jpg') no-repeat right bottom fixed;
+    /*background: url('http://blackrockdigital.github.io/startbootstrap-grayscale/img/intro-bg.jpg') no-repeat right bottom fixed;*/
+    background: url('/img/home.png') no-repeat right bottom fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Rent Out Your Gear</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        #main-img {
+            background: url('/img/rentgear.png') no-repeat left bottom;
+            height: 200px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            color: white;
+            padding-left: 30px;
+        }
+
+        #after-img {
+            margin-top: 200px;
+            position: relative;
+        }
+
+        #rent-gear {
+        }
+
+        #rent-gear li {
+            padding: 20px;
+            border-bottom: 1px solid #747474;
+            font-size: 2em;
+            vertical-align: middle;
+        }
+
+        #rent-gear li a {
+            color: black;
+        }
+
+        #rent-gear li a:hover {
+            text-decoration: none;;
+        }
+
+        #rent-gear li:hover {
+            background: #dbdbdb;
+            cursor: pointer;
+        }
+    </style>
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+
+
+<div id="main-img">
+    <h1>Rent Gear</h1>
+</div>
+
+<div id="after-img">
+    <ul class="list-unstyled" id="rent-gear">
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Backpack</a></li>
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Tent</a></li>
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Stove</a></li>
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Kayak</a></li>
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Surfboard</a></li>
+        <li><a href="/filter.html"><span class="glyphicon glyphicon-unchecked"></span> Sleeping Bag</a></li>
+    </ul>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+</body>
+</html>
