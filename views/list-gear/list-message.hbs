@@ -1,47 +1,30 @@
 {{#extend "title"}}
-    List Gear - Choose Type
+    SurfBoardBoard
 {{/extend}}
 
 {{#extend "css"}}
-    <link rel="stylesheet" href="/css/list-gear/choose-type.css">
+    <link rel="stylesheet" href="/css/list-gear/message.css"/>
 {{/extend}}
 
 <div class="container-fluid" id="top-bar">
     <div class="pull-left">
-        <i class="fa fa-arrow-left"></i>
-    </div>
-
-    <div class="pull-right">
-        <i class="fa fa-search"></i>
+        <i class="fa fa-bars" id="open-menu"></i>
     </div>
 </div>
 
-<div id="main-img">
-    <h1>List Your Gear</h1>
+<div class="container" id="description">
+
+    <h3 class="text-center text-uppercase">A Great Description</h3>
+    <p class = "text-center">A great description highlights<br />some of the best features<br />and quality of your gear.</p>
 </div>
 
-<div id="after-img">
-    <ul class="list-unstyled" id="rent-gear">
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Backpack</a>
-        </li>
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Tent</a></li>
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Stove</a>
-        </li>
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Kayak</a>
-        </li>
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Surfboard</a>
-        </li>
-        <li>
-            <a href="/find-gear/results"><i class="fa fa-circle-thin"></i> Sleeping Bag</a>
-        </li>
-    </ul>
+<div class="main-btn">
+    <a type="button" href="/list-gear/list-choose-type">
+        Okay, got it
+        <i class="fa fa-chevron-right"></i>
+    </a>
 </div>
-
 
 {{#extend "js"}}
+    <script src="/js/main.js"></script>
 {{/extend}}
