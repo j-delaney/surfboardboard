@@ -1,0 +1,58 @@
+{{#extend "title"}}
+    Rent Gear - Results
+{{/extend}}
+
+{{#extend "css"}}
+    <link rel="stylesheet" href="/css/find-gear/results.css">
+{{/extend}}
+
+<div class="container-fluid" id="top-bar">
+    <div class="pull-left">
+        <i class="fa fa-bars" id="open-menu"></i>
+    </div>
+
+    <div class="pull-right">
+        <i class="fa fa-search"></i>
+    </div>
+</div>
+
+<div id="fixed-img">
+    <h1 class="text-center">Tents</h1>
+</div>
+
+<div id="filter-container">
+    <i class="fa fa-cogs"></i>
+</div>
+
+<div id="filter-overlay">
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            {{#each tents}}
+                {{#if_even @index}}
+                    <a class="listing-box" href="/view/{{@index}}">
+                        <img src="{{picture}}" class="img-responsive">
+                        <p>{{title}}</p>
+                    </a>
+                {{/if_even}}
+            {{/each}}
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            {{#each tents}}
+                {{#if_odd @index}}
+                    <a class="listing-box" href="/view/{{@index}}">
+                        <img src="{{picture}}" class="img-responsive">
+                        <p>{{title}}</p>
+                    </a>
+                {{/if_odd}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+{{#extend "js"}}
+    <script src="/js/results.js"></script>
+{{/extend}}

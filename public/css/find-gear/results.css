@@ -1,0 +1,62 @@
+
+#fixed-img {
+    background: url('/img/searchresults.png') no-repeat left center;
+    height: 100px;
+}
+
+.row {
+    margin-top: 110px;
+}
+
+.listing-box {
+    display: block;
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.10);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.10);
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.10);
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.listing-box:hover {
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.30);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.30);
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.30);
+    color: black;
+    text-decoration: none;
+}
+
+.listing-box p {
+    text-align: center;
+}
+
+#filter-container {
+    background-color: rgb(255, 51, 102);
+    z-index: 30;
+    position: fixed;
+    right: 30px;
+    top: 75px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    color: white;
+
+    padding-left: 7px;
+    padding-top: 9px;
+}
+
+#filter-container i {
+    font-size: 30px;
+}
+
+#filter-overlay {
+    display: none;
+    position: fixed;
+    background-color: #FFFFFF;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    z-index: 200;
+}

@@ -1,0 +1,101 @@
+{
+  "brands": ["Marmot", "Coleman", "North Face", "Walmart"],
+  "tents": [
+    {
+      "title": "Marmot Ultralight Tent",
+      "picture": "/img/marmot.jpg",
+      "people": 1,
+      "brand": "Marmot",
+      "reviews": {
+        "count": 36,
+        "stars": 5
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Coleman 12 person tent",
+      "picture": "/img/coleman.jpg",
+      "people": 12,
+      "brand": "Coleman",
+      "reviews": {
+        "count": 3,
+        "stars": 4
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Gorgeous Tent. Cozy and Comfy",
+      "picture": "/img/gorgeous.jpg",
+      "people": 2,
+      "brand": "North Face",
+      "reviews": {
+        "count": 10,
+        "stars": 3
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Regular Tent",
+      "picture": "/img/plain-tent.jpg",
+      "people": 2,
+      "brand": "Walmart",
+      "reviews": {
+        "count": 1,
+        "stars": 2
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Marmot Ultralight Tent",
+      "picture": "/img/marmot.jpg",
+      "people": 1,
+      "brand": "Marmot",
+      "reviews": {
+        "count": 36,
+        "stars": 5
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Coleman 12 person tent",
+      "picture": "/img/coleman.jpg",
+      "people": 12,
+      "brand": "Coleman",
+      "reviews": {
+        "count": 3,
+        "stars": 4
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Gorgeous Tent. Cozy and Comfy",
+      "picture": "/img/gorgeous.jpg",
+      "people": 2,
+      "brand": "North Face",
+      "reviews": {
+        "count": 10,
+        "stars": 3
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "title": "Regular Tent",
+      "picture": "/img/plain-tent.jpg",
+      "people": 2,
+      "brand": "Walmart",
+      "reviews": {
+        "count": 1,
+        "stars": 2
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet"
+    }
+  ]
+}
