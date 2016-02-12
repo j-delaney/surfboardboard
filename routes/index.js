@@ -19,8 +19,8 @@ router.get('/list-gear/list-edit-description', function (request, response, next
     response.render('list-gear/list-edit-description');
 });
 
-router.get('/list-gear/list-edit-description', function (request, response, next) {
-    response.render('list-gear/list-steps-description');
+router.get('/list-gear/list-steps', function (request, response, next) {
+    response.render('list-gear/list-steps');
 });
 
 router.get('/find-gear/choose-type', function (request, response, next) {
