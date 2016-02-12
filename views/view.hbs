@@ -3,21 +3,84 @@
 {{/extend}}
 
 {{#extend "css"}}
+    <link rel="stylesheet" href="/css/view.css">
 {{/extend}}
 
-<div class="container-fluid" id="top-bar">
-    <div class="pull-left">
-        <i class="fa fa-bars" id="open-menu"></i>
+<div id="view-img">
+    <img src="{{picture}}">
+</div>
+
+<div class="container-fluid">
+    <div class="row" id="attributes">
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <i class="fa fa-archive"></i>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <!--TODO: This code is bad and I should feel bad. Fix that.-->
+            {{#ifEq reviews.stars 1}}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            {{/ifEq}}
+
+            {{#ifEq reviews.stars 2}}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            {{/ifEq}}
+
+            {{#ifEq reviews.stars 3}}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            {{/ifEq}}
+
+            {{#ifEq reviews.stars 4}}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            {{/ifEq}}
+
+            {{#ifEq reviews.stars 5}}
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            {{/ifEq}}
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <p>{{people}} People</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <p>{{brand}}</p>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            <p>{{reviews.count}} Reviews</p>
+        </div>
     </div>
 
-    <div class="pull-right">
-        <i class="fa fa-search"></i>
+    <div id="info">
+        <h4><strong>{{location}}</strong></h4>
+        <p>{{description}}</p>
     </div>
 </div>
 
-<div id="fixed-img">
-    <h1 class="text-center">Tents</h1>
-</div>
+<a id="contact" href="https://messenger.com">
+    Contact Owner
+</a>
 
 {{#extend "js"}}
     <script src="/js/results.js"></script>

@@ -1,0 +1,39 @@
+#view-img {
+    width: 100%;
+    overflow-y: hidden;
+    border-bottom: 1px solid #cccccc;
+}
+
+#view-img img {
+    width: 100%;
+}
+
+#attributes {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.container-fluid {
+    padding-bottom: 50px;
+}
+
+#contact {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #d43f3a;
+    color: white;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#contact:hover {
+    color: white;
+    text-decoration: none;
+}

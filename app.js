@@ -50,6 +50,13 @@ hbs.registerHelper('if_odd', function (conditional, options) {
     }
 });
 
+hbs.registerHelper('ifEq', function (v1, v2, options) {
+    if (v1 === v2) {
+        return options.fn(this);
+    }
+    return options.inverse(this);
+});
+
 // app.use(favicon(path.join(__dirname, 'public', 'img', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
