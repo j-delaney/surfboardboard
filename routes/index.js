@@ -7,6 +7,10 @@ router.get('/', function (request, response, next) {
     response.render('index');
 });
 
+router.get('/list-gear/list-choose-type', function (request, response, next) {
+    response.render('list-gear/list-choose-type');
+});
+
 router.get('/find-gear/choose-type', function (request, response, next) {
     response.render('find-gear/choose-type');
 });
