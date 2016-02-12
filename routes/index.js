@@ -15,6 +15,10 @@ router.get('/list-gear/list-message', function (request, response, next) {
     response.render('list-gear/list-message');
 });
 
+router.get('/list-gear/list-message', function (request, response, next) {
+    response.render('list-gear/list-edit-description');
+});
+
 router.get('/find-gear/choose-type', function (request, response, next) {
     response.render('find-gear/choose-type');
 });
