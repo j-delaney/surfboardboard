@@ -53,3 +53,23 @@ body, html, h1, h2, h3, h4, h5, h6 {
     z-index: 25;
     color: white;
 }
+
+.link-list a {
+    color: #000000;
+    display: block;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 2em;
+    vertical-align: middle;
+}
+
+.link-list a i {
+    margin-right: 20px;
+}
+
+.link-list a:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -19,30 +19,3 @@
     margin-top: 250px;
     position: relative;
 }
-
-#rent-gear {
-}
-
-#rent-gear li {
-    padding: 20px;
-    border-bottom: 1px solid #aaaaaa;
-    font-size: 2em;
-    vertical-align: middle;
-}
-
-#rent-gear li a {
-    color: black;
-}
-
-#rent-gear li a i {
-    margin-right: 10px;
-}
-
-#rent-gear li a:hover {
-    text-decoration: none;;
-}
-
-#rent-gear li:hover {
-    background: #dbdbdb;
-    cursor: pointer;
-}
