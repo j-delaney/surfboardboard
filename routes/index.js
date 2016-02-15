@@ -43,6 +43,10 @@ router.get('/find-gear/choose-type', function (request, response, next) {
     response.render('find-gear/choose-type');
 });
 
+router.get('/find-gear/prelim-filter', function (request, response, next) {
+    response.render('find-gear/prelim-filter');
+});
+
 router.get('/find-gear/results', function (request, response, next) {
     response.render('find-gear/results', data);
 });

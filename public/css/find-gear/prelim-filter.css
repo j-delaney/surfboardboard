@@ -1,0 +1,45 @@
+body, html {
+    background: url('/img/filter.png') no-repeat right bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100%;
+
+    color: white;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background: #50D2C2;
+}
+
+.main-btn {
+    height: 100px;
+    line-height: 100px;
+    background-color: rgba(255, 255, 255, 0.10);
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.main-btn a {
+    color: white;
+    font-size: 2em;
+}
+
+.search-btn {
+    height: 100px;
+    line-height: 100px;
+    background-color: #FF3366;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.search-btn a {
+    color: #ffffff;
+    font-size: 2em;
+}
