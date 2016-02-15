@@ -3,12 +3,22 @@
 {{/extend}}
 
 {{#extend "css"}}
+    <link rel="stylesheet" href="/css/blueimp-gallery.min.css">
     <link rel="stylesheet" href="/css/view.css">
 {{/extend}}
 
-<div id="view-img">
-    <img src="{{picture}}">
+<div id="view-img" class="blueimp-gallery blueimp-gallery-carousel">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
 </div>
+
+<!--<div id="view-img">
+    <img src="{{tent.picture}}">
+</div>-->
 
 <div class="container-fluid">
     <div class="row" id="attributes">
@@ -19,69 +29,58 @@
             <i class="fa fa-archive"></i>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4">
-            <!--TODO: This code is bad and I should feel bad. Fix that.-->
-            {{#ifEq reviews.stars 1}}
+            {{#repeat tent.reviews.stars}}
                 <i class="fa fa-star"></i>
+            {{/repeat}}
+            {{#n_minus_repeat 5 tent.reviews.stars}}
                 <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            {{/ifEq}}
-
-            {{#ifEq reviews.stars 2}}
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            {{/ifEq}}
-
-            {{#ifEq reviews.stars 3}}
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-            {{/ifEq}}
-
-            {{#ifEq reviews.stars 4}}
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-            {{/ifEq}}
-
-            {{#ifEq reviews.stars 5}}
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            {{/ifEq}}
+            {{/n_minus_repeat}}
         </div>
 
         <div class="col-md-4 col-sm-4 col-xs-4">
-            <p>{{people}} People</p>
+            <p>{{tent.people}} People</p>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4">
-            <p>{{brand}}</p>
+            <p>{{tent.brand}}</p>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4">
-            <p>{{reviews.count}} Reviews</p>
+            <p>{{tent.reviews.count}} Reviews</p>
         </div>
     </div>
 
-    <div id="info">
-        <h4><strong>{{location}}</strong></h4>
-        <p>{{description}}</p>
+    <div class="row" id="dates">
+        <div class="col-md-6 col-xs-6 col-sm-6 dates-box" id="left-dates">
+            February 14, 2016
+        </div>
+        <div class="col-md-6 col-xs-6 col-sm-6 dates-box">
+            February 16, 2016
+        </div>
+    </div>
+
+    <div class="row" id="info">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4><strong>{{tent.location}}</strong></h4>
+            <p>{{tent.description}}</p>
+        </div>
+    </div>
+
+    <div id="owner-info" class="text-center">
+        <img src="{{owner.picture}}" class="img-circle">
+        <p><strong>{{owner.name}}</strong></p>
     </div>
 </div>
 
-<a id="contact" href="https://messenger.com">
-    Contact Owner
+<a id="request-to-rent" href="/">
+Request To Rent
 </a>
 
+<div id="links">
+{{#each tent.pictures}}
+    <a href="{{this}}"></a>
+{{/each}}
+</div>
+
 {{#extend "js"}}
-    <script src="/js/results.js"></script>
+    <script src="/js/jquery.blueimp-gallery.min.js"></script>
+    <script src="/js/view.js"></script>
 {{/extend}}

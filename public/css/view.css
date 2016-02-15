@@ -1,11 +1,5 @@
 #view-img {
-    width: 100%;
-    overflow-y: hidden;
-    border-bottom: 1px solid #cccccc;
-}
-
-#view-img img {
-    width: 100%;
+    margin-top: 0;
 }
 
 #attributes {
@@ -19,7 +13,32 @@
     padding-bottom: 50px;
 }
 
-#contact {
+#dates {
+    border-bottom: 1px solid #cccccc;
+    text-align: center;
+}
+
+.dates-box {
+    padding: 10px 0;
+}
+
+#left-dates {
+    border-right: 1px solid #cccccc;
+}
+
+#info {
+    border-bottom: 1px solid #cccccc;
+}
+
+#owner-info {
+    border-bottom: 1px solid #cccccc;
+}
+
+#owner-info img {
+    width: 100px;
+}
+
+#request-to-rent {
     display: block;
     width: 100%;
     text-align: center;
@@ -33,7 +52,7 @@
     font-size: 20px;
 }
 
-#contact:hover {
+#request-to-rent:hover {
     color: white;
     text-decoration: none;
 }

@@ -2,8 +2,10 @@
   "brands": ["Marmot", "Coleman", "North Face", "Walmart"],
   "tents": [
     {
+      "id": 0,
+      "owner": 0,
       "title": "Marmot Ultralight Tent",
-      "picture": "/img/marmot.jpg",
+      "pictures": ["/img/marmot.jpg"],
       "people": 1,
       "brand": "Marmot",
       "reviews": {
@@ -14,8 +16,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 1,
+      "owner": 0,
       "title": "Coleman 12 person tent",
-      "picture": "/img/coleman.jpg",
+      "pictures": ["/img/coleman.jpg"],
       "people": 12,
       "brand": "Coleman",
       "reviews": {
@@ -26,8 +30,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 2,
+      "owner": 0,
       "title": "Gorgeous Tent. Cozy and Comfy",
-      "picture": "/img/gorgeous.jpg",
+      "pictures": ["/img/gorgeous.jpg"],
       "people": 2,
       "brand": "North Face",
       "reviews": {
@@ -38,8 +44,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 3,
+      "owner": 0,
       "title": "Regular Tent",
-      "picture": "/img/plain-tent.jpg",
+      "pictures": ["/img/plain-tent.jpg"],
       "people": 2,
       "brand": "Walmart",
       "reviews": {
@@ -50,8 +58,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 4,
+      "owner": 0,
       "title": "Marmot Ultralight Tent",
-      "picture": "/img/marmot.jpg",
+      "pictures": ["/img/marmot.jpg"],
       "people": 1,
       "brand": "Marmot",
       "reviews": {
@@ -62,8 +72,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 5,
+      "owner": 0,
       "title": "Coleman 12 person tent",
-      "picture": "/img/coleman.jpg",
+      "pictures": ["/img/coleman.jpg"],
       "people": 12,
       "brand": "Coleman",
       "reviews": {
@@ -74,8 +86,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 6,
+      "owner": 0,
       "title": "Gorgeous Tent. Cozy and Comfy",
-      "picture": "/img/gorgeous.jpg",
+      "pictures": ["/img/gorgeous.jpg"],
       "people": 2,
       "brand": "North Face",
       "reviews": {
@@ -86,8 +100,10 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
     },
     {
+      "id": 7,
+      "owner": 0,
       "title": "Regular Tent",
-      "picture": "/img/plain-tent.jpg",
+      "pictures": ["/img/plain-tent.jpg"],
       "people": 2,
       "brand": "Walmart",
       "reviews": {
@@ -96,6 +112,36 @@
       },
       "location": "La Jolla",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+    },
+    {
+      "id": 8,
+      "owner": 0,
+      "title": "Sundome Tent",
+      "pictures": [
+        "/img/upload/items/sundome1.jpg",
+        "/img/upload/items/sundome2.jpg",
+        "/img/upload/items/sundome3.jpg",
+        "/img/upload/items/sundome4.jpg",
+        "/img/upload/items/sundome5.jpg",
+        "/img/upload/items/sundome6.jpg",
+        "/img/upload/items/sundome7.jpg"
+      ],
+      "people": 6,
+      "brand": "Coleman",
+      "reviews": {
+        "count": 3,
+        "stars": 4
+      },
+      "location": "La Jolla",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien justo, porta vel venenatis nec, mattis ut mi. Pellentesque rutrum neque a suscipit lobortis. In eget odio est. Morbi vestibulum lacinia est in scelerisque. Phasellus fringilla non ante ut dictum. Aliquam erat volutpat. Morbi vestibulum ultricies velit ac euismod. Sed sodales mattis pharetra. Pellentesque sit amet tempor quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "name": "Jesse Qin",
+      "picture": "/img/upload/users/jesse.jpg",
+      "fbid": "JesseQin"
     }
   ]
 }
