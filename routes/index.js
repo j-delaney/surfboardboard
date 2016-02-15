@@ -52,8 +52,17 @@ router.get('/find-gear/results', function (request, response, next) {
 });
 
 router.get('/view/:id', function (request, response, next) {
-    console.log(data.tents[request.params['id']]);
-    response.render('view', data.tents[request.params['id']]);
+    var tent =  data.tents[request.params['id']];
+    var owner = data.users[tent.owner];
+
+    response.render('view', {
+        tent: tent,
+        owner: owner
+    });
+});
+
+router.get('/find-gear/request-confirmation', function (request, response, next) {
+    response.render('find-gear/request-confirmation');
 });
 
 module.exports = router;

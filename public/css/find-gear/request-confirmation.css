@@ -1,0 +1,36 @@
+body, html {
+    background: url('/img/listing-message.png') no-repeat left top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100%;
+
+    color: white;
+}
+
+#description {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.main-btn {
+    height: 100px;
+    line-height: 100px;
+    background-color: rgba(255, 255, 255, 0.10);
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+#checkmark {
+    width: 250px; 
+    margin: 0 auto;
+    display: block;
+}
+
+.main-btn a {
+    color: white;
+    font-size: 2em;
+}

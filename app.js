@@ -34,6 +34,22 @@ hbs.registerHelper('block', function (name) {
     return val;
 });
 
+hbs.registerHelper('repeat', function (amount, options) {
+    var out = '';
+    for (var i = 0; i < amount; i++) {
+        out += options.fn(amount[i]);
+    }
+    return out;
+});
+
+hbs.registerHelper('n_minus_repeat', function (n, amount, options) {
+    var out = '';
+    for (var i = 0; i < n - amount; i++) {
+        out += options.fn(amount[i]);
+    }
+    return out;
+});
+
 hbs.registerHelper('if_even', function (conditional, options) {
     if ((conditional % 2) == 0) {
         return options.fn(this);

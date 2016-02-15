@@ -3,7 +3,7 @@
     height: 100px;
 }
 
-.row {
+#content {
     margin-top: 110px;
 }
 
@@ -58,4 +58,12 @@
     left: 10%;
     top: 10%;
     z-index: 200;
+    border: 1px solid #DDDDDD;
+}
+
+.date-box {
+    text-align: center;
+    background-color: rgb(80, 210, 194);
+    padding: 3px 0;
+    cursor: pointer;
 }
