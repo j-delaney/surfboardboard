@@ -67,7 +67,7 @@
             {{#each tents}}
                 {{#if_even @index}}
                     <a class="listing-box" href="/view/{{@index}}">
-                        <img src="{{picture}}" class="img-responsive">
+                        <img src="{{pictures.[0]}}" class="img-responsive">
                         <p>{{title}}</p>
                     </a>
                 {{/if_even}}
@@ -77,7 +77,7 @@
             {{#each tents}}
                 {{#if_odd @index}}
                     <a class="listing-box" href="/view/{{@index}}">
-                        <img src="{{picture}}" class="img-responsive">
+                        <img src="{{pictures.[0]}}" class="img-responsive">
                         <p>{{title}}</p>
                     </a>
                 {{/if_odd}}
