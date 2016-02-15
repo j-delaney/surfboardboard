@@ -7,6 +7,7 @@
       "title": "Marmot Ultralight Tent",
       "pictures": ["/img/marmot.jpg"],
       "people": 1,
+      "price": 10,
       "brand": "Marmot",
       "reviews": {
         "count": 36,
@@ -21,6 +22,7 @@
       "title": "Coleman 12 person tent",
       "pictures": ["/img/coleman.jpg"],
       "people": 12,
+      "price": 10,
       "brand": "Coleman",
       "reviews": {
         "count": 3,
@@ -35,6 +37,7 @@
       "title": "Gorgeous Tent. Cozy and Comfy",
       "pictures": ["/img/gorgeous.jpg"],
       "people": 2,
+      "price": 10,
       "brand": "North Face",
       "reviews": {
         "count": 10,
@@ -49,6 +52,7 @@
       "title": "Regular Tent",
       "pictures": ["/img/plain-tent.jpg"],
       "people": 2,
+      "price": 10,
       "brand": "Walmart",
       "reviews": {
         "count": 1,
@@ -63,6 +67,7 @@
       "title": "Marmot Ultralight Tent",
       "pictures": ["/img/marmot.jpg"],
       "people": 1,
+      "price": 10,
       "brand": "Marmot",
       "reviews": {
         "count": 36,
@@ -77,6 +82,7 @@
       "title": "Coleman 12 person tent",
       "pictures": ["/img/coleman.jpg"],
       "people": 12,
+      "price": 10,
       "brand": "Coleman",
       "reviews": {
         "count": 3,
@@ -91,6 +97,7 @@
       "title": "Gorgeous Tent. Cozy and Comfy",
       "pictures": ["/img/gorgeous.jpg"],
       "people": 2,
+      "price": 10,
       "brand": "North Face",
       "reviews": {
         "count": 10,
@@ -105,6 +112,7 @@
       "title": "Regular Tent",
       "pictures": ["/img/plain-tent.jpg"],
       "people": 2,
+      "price": 10,
       "brand": "Walmart",
       "reviews": {
         "count": 1,
@@ -127,6 +135,7 @@
         "/img/upload/items/sundome7.jpg"
       ],
       "people": 6,
+      "price": 15,
       "brand": "Coleman",
       "reviews": {
         "count": 3,
