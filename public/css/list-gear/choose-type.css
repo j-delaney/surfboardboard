@@ -46,3 +46,7 @@
     background: #dbdbdb;
     cursor: pointer;
 }
+
+#top-bar a {
+	color: #FFFFFF
+}
