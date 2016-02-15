@@ -40,4 +40,8 @@ router.get('/view/:id', function (request, response, next) {
     response.render('view', data.tents[request.params['id']]);
 });
 
+router.get('/find-gear/request-confirmation', function (request, response, next) {
+    response.render('find-gear/request-confirmation');
+});
+
 module.exports = router;
