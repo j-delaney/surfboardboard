@@ -1,6 +1,12 @@
 
 #main-img {
-    background: url('/img/rentgear.png') no-repeat left bottom;
+      background: url('/img/coleman.jpg');
+    width: 100px;
+    height: 200px;
+    background-position: center;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+    /*background: url('/img/rentgear.png') no-repeat left bottom ; */
     height: 300px;
     width: 100%;
     position: fixed;
@@ -88,5 +94,39 @@
 
 .dropper {
     display: none;
+    padding: 20px;
 }
 
+#input {
+    width: 100%;
+    color: grey;
+}
+
+#input-price {
+    width: 75px;
+    display: inline;
+}
+
+#inline {
+    display: inline;
+    color: grey;
+}
+
+#request-to-rent {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    /*position: fixed;*/
+    bottom: 0;
+    left: 0;
+    background-color: #d43f3a;
+    color: white;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#request-to-rent:hover {
+    color: white;
+    text-decoration: none;
+}
