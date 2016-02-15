@@ -3,40 +3,39 @@
 {{/extend}}
 
 {{#extend "css"}}
-    <link rel="stylesheet" href="/css/list-gear/choose-type.css">
+    <link rel="stylesheet" href="/css/list-gear/list-steps.css">
 {{/extend}}
 
-<div class="container-fluid" id="top-bar">
-    <div class="pull-left">
-        <i class="fa fa-bars" id="open-menu"></i>
+    <div id="top-bar-steps">
+       <!-- <i class="fa fa-arrow-left" id="back-arrow"></i> -->
+        <h2>6 steps to list</h2>
     </div>
+
+
+<!--     <div class="pull-left">
+        <i class="fa fa-bars" id="open-menu"></i>
+    </div> -->
 </div>
 
-    <div class="pull-right">
+<!--     <div class="pull-right">
         <i class="fa fa-search"></i>
-    </div>
+    </div> -->
 </div>
 
 <div id="main-img">
-    <h1>5 Steps to List</h1>
+    <img id="photos-icon" src="/img/CameraIcon.png" >
+    <h5 id="add-photos"><button id="upload">Add Photo</button> <input type="file" id="input-upload" accept="image/*;capture=camera"></h5>
 </div>
 
 <div id="after-img">
-    <ul class="list-unstyled" id="rent-gear">
-        <li>
-            <a href="/list-gear/list-edit-title"><i class="fa fa-circle-thin"></i> Write Title</a>
-        </li>
-        <li>
-            <a href="/list-gear/list-edit-description"><i class="fa fa-circle-thin"></i> Write Summary</a></li>
-        <li>
-            <a href="/list-gear/list-message"><i class="fa fa-circle-thin"></i> Set Your Price</a>
-        </li>
-        <li>
-            <a href="/list-gear/list-message"><i class="fa fa-circle-thin"></i> Set Pickup Address</a>
-        </li>
-        <li>
-            <a href="/list-gear/list-message"><i class="fa fa-circle-thin"></i> Product Details</a>
-        </li>
+ <!--    <ul class="list-unstyled" id="rent-gear"> -->
+    <div class="link-list">
+        <a href="/find-gear/results"> <img src="/img/unchecked-box.png" id="unchecked"> <h3 id="StepHeader">Write Title</h3> <h4 id="StepSubtitle">Give your listing a descriptive headline</h4> </a>
+        <a href="/find-gear/results"> <img src="/img/unchecked-box.png" id="unchecked"> <h3 id="StepHeader">Write Description</h3> <h4 id="StepSubtitle">Describe your listing's characteristics</h4> </a>
+        <a href="/find-gear/results"> <img src="/img/unchecked-box.png" id="unchecked"> <h3 id="StepHeader">Set Price</h3> <h4 id="StepSubtitle">It's time to make money off that thing!</h4> </a>
+        <a href="/find-gear/results"> <img src="/img/unchecked-box.png" id="unchecked"> <h3 id="StepHeader">Set Pickup Address</h3> <h4 id="StepSubtitle">Where will people pick it up from you?</h4> </a>
+        <a href="/find-gear/results"> <img src="/img/unchecked-box.png" id="unchecked"> <h3 id="StepHeader">Product Details</h3> <h4 id="StepSubtitle">Specify Important Details</h4> </a>
+    </div>
     </ul>
 </div>
 

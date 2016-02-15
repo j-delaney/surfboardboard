@@ -45,4 +45,8 @@ router.get('/view/:id', function (request, response, next) {
     });
 });
 
+router.get('/find-gear/request-confirmation', function (request, response, next) {
+    response.render('find-gear/request-confirmation');
+});
+
 module.exports = router;
