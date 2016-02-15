@@ -24,5 +24,5 @@ $(document).ready(function () {
     $menuDarkOverlay = $('#menu-dark-overlay');
     $filterOverlay = $('#filter-overlay');
 
-    //$('#filter-container').on('click', showFilterOverlay);
+    $('#filter-container').on('click', showFilterOverlay);
 });
