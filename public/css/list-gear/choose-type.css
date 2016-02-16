@@ -1,7 +1,7 @@
 
 #main-img {
     background: url('/img/rentgear.png') no-repeat left bottom;
-    height: 250px;
+    height: 225px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -12,11 +12,11 @@
 }
 
 #main-img h1 {
-    line-height: 250px;
+    margin-top: 75px;
 }
 
 #after-img {
-    margin-top: 250px;
+    margin-top: 315px;
     position: relative;
 }
 
@@ -49,4 +49,52 @@
 
 #top-bar a {
 	color: #FFFFFF
+}
+
+
+#subtitle {
+    font-size: 19px;
+    max-width: 400px;
+}
+
+#prompt {
+    display: block;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 2px solid #000000;
+    vertical-align: middle;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    left: 0;
+    top: 225px;
+    z-index: 1;
+}
+
+#promptText {
+   font-weight: bold;
+   font-size: 2em;
+   color: black; 
+}
+
+.link-list a {
+    color: #000000;
+    display: block;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 2em;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #EFEFEF;
+}
+
+.link-list a i {
+    margin-right: 20px;
+}
+
+.link-list a:hover {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
 }
