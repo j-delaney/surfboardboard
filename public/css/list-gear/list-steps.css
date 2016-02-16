@@ -28,11 +28,10 @@
     position: relative;
 }
 
-
-#unchecked {
-    float: right;
-    width: 40px;
+.square-right i {
+    font-size: 50px;
     margin-top: 20px;
+    color: #979797;
 }
 
 #StepSubtitle {
