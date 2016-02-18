@@ -39,6 +39,13 @@ router.get('/list-gear/list-edit-description', function (request, response, next
     response.render('list-gear/list-price');
 });
 
+router.get('/list-gear/listing-confirmation', function (request, response, next) {
+    response.render('list-gear/listing-confirmation');
+});
+
+
+
+
 router.get('/find-gear/choose-type', function (request, response, next) {
     response.render('find-gear/choose-type');
 });
