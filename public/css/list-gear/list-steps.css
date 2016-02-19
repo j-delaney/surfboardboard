@@ -26,6 +26,7 @@
 #after-img {
     margin-top: 0px;
     position: relative;
+    padding-bottom: 50px;
 }
 
 .square-right i {
@@ -116,13 +117,14 @@
     width: 100%;
     text-align: center;
     height: 50px;
-    /*position: fixed;*/
+    position: fixed;
     bottom: 0;
     left: 0;
     background-color: #d43f3a;
     color: white;
     line-height: 50px;
     font-size: 20px;
+    display: none;
 }
 
 #request-to-rent:hover {

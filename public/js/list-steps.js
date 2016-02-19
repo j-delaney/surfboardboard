@@ -14,7 +14,20 @@ $(document).ready(function () {
         if (val === '') {
             $(this).closest('a').find('i').removeClass('fa-check-square-o').addClass('fa-square-o');
         } else {
+            var done = true;
+            $stepsA.find('input,textarea').each(function (index, element) {
+                if ($(this).val().trim() === '') {
+                    done = false;
+                }
+            });
+
             $(this).closest('a').find('i').removeClass('fa-square-o').addClass('fa-check-square-o');
+
+            if (done) {
+                $('#request-to-rent').show();
+            } else {
+                $('#request-to-rent').hide();
+            }
         }
 
     });
