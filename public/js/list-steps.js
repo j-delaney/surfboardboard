@@ -45,4 +45,24 @@ $(document).ready(function () {
 
         return false;
     });
+
+    $('#request-to-rent').on('click', function (event) {
+        event.preventDefault();
+
+        $('#request-to-rent').hide();
+        var data = {
+            title: $('#input-title').val().trim(),
+            desc: $('#input-desc').val().trim(),
+            price: $('#input-price').val().trim(),
+            address: $('#input-address').val().trim(),
+            holds: $('#input-holds').val().trim()
+        };
+
+        console.log(data);
+
+        $.post('/api/list', data, function (response, textStatus) {
+            var id = response.id;
+            window.location.href = '/list-gear/listing-confirmation/' + id;
+        });
+    });
 });
