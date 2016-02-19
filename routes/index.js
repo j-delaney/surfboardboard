@@ -7,6 +7,14 @@ router.get('/', function (request, response, next) {
     response.render('index');
 });
 
+router.get('/profile', function (request, response, next) {
+    response.render('profile');
+});
+
+router.get('/signup', function (request, response, next) {
+    response.render('signup');
+});
+
 router.get('/list-gear/list-choose-type', function (request, response, next) {
     response.render('list-gear/list-choose-type');
 });
