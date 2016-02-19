@@ -58,6 +58,10 @@ router.get('/find-gear/results', function (request, response, next) {
     response.render('find-gear/results', data);
 });
 
+router.get('/find-gear/payment', function (request, response, next) {
+    response.render('find-gear/payment', data);
+});
+
 router.get('/view/:id', function (request, response, next) {
     var tent =  data.tents[request.params['id']];
     var owner = data.users[tent.owner];

@@ -1,0 +1,58 @@
+#fixed-img {
+    background: url('/img/searchresults.png') no-repeat left center;
+    height: 100px;
+}
+
+body, html {
+    background-color: #808080;
+}
+
+.container {
+    background: #ffffff;
+}
+
+.fa-circle {
+    font-size: 9px;
+}
+
+#product-detail p {
+    font-size: 8px;
+}
+
+#dates h3 {
+    text-align: center;
+}
+
+#price h3 {
+    text-align: center;
+}
+
+#price h4 {
+    color: #7ED321;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background: #50D2C2;
+}
+
+.main-btn a {
+    color: white;
+    font-size: 2em;
+}
+
+.request-btn {
+    height: 100px;
+    line-height: 100px;
+    background-color: #FF3366;
+    text-align: center;
+    width: 100%;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.request-btn a {
+    color: #ffffff;
+    font-size: 2em;
+}
