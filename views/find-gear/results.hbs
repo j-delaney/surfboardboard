@@ -3,6 +3,9 @@
 {{/extend}}
 
 {{#extend "css"}}
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="/css/find-gear/results.css">
 {{/extend}}
 
@@ -27,17 +30,19 @@
 <div id="filter-overlay">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6" id="checkin">
                 <div class="date-box">
                     Check In <br/>
                     <i class="fa fa-chevron-down"></i>
                 </div>
+                <input type="text">
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6" id="checkout">
                 <div class="date-box">
                     Check Out <br/>
                     <i class="fa fa-chevron-down"></i>
                 </div>
+                <input type="text">
             </div>
         </div>
 
@@ -87,5 +92,6 @@
 </div>
 
 {{#extend "js"}}
+    <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/results.js"></script>
 {{/extend}}

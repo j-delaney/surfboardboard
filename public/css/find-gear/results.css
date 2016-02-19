@@ -66,4 +66,12 @@
     background-color: rgb(80, 210, 194);
     padding: 3px 0;
     cursor: pointer;
+    z-index: 1;
+}
+
+#filter-overlay input {
+    z-index: 0;
+    width: 1px;
+    height: 1px;
+    margin-top: -10px;
 }

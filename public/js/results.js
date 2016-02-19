@@ -25,4 +25,24 @@ $(document).ready(function () {
     $filterOverlay = $('#filter-overlay');
 
     $('#filter-container').on('click', showFilterOverlay);
+
+    var $checkin = $('#checkin');
+    var $checkinInput = $checkin.children('input');
+    var $checkinDateBox = $checkin.children('.date-box');
+
+    $checkinInput.datepicker({});
+
+    $checkinDateBox.on('click', function (event) {
+        $checkinInput.datepicker('show');
+    });
+
+    var $checkout = $('#checkout');
+    var $checkoutInput = $checkout.children('input');
+    var $checkoutDateBox = $checkout.children('.date-box');
+
+    $checkoutInput.datepicker({});
+
+    $checkoutDateBox.on('click', function (event) {
+        $checkoutInput.datepicker('show');
+    });
 });
