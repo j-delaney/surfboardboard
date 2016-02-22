@@ -58,6 +58,10 @@
     text-decoration: none;
 }
 
+.fa-home {
+	color: #ffffff;
+}
+
 .pickupReturn {
     margin-bottom: -7px;
     color: grey;
@@ -77,7 +81,7 @@
    font-size: 30px;
    font-weight: bold;
    display: inline-block;
-    text-align: left;
+   text-align: left;
 
 }
 
@@ -92,6 +96,3 @@
     color: green;
     font-size: 14px;
 }
-
-
-
