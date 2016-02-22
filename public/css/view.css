@@ -3,8 +3,8 @@
 }
 
 #attributes {
-    margin-top: 10px;
-    text-align: center;
+    /*margin-top: 10px;*/
+    
     font-size: 16px;
     border-bottom: 1px solid #cccccc;
 }
@@ -34,6 +34,7 @@
     border-bottom: 1px solid #cccccc;
 }
 
+
 #owner-info img {
     width: 100px;
 }
@@ -56,3 +57,41 @@
     color: white;
     text-decoration: none;
 }
+
+.pickupReturn {
+    margin-bottom: -7px;
+    color: grey;
+    margin-top: 0px;
+}
+
+.date {
+    font-weight: bold;
+    margin-bottom: -10px;
+
+}
+
+#product-name {
+   margin-top: 15px;
+   margin-bottom: 10px;
+   margin-left: 15px;
+   font-size: 30px;
+   font-weight: bold;
+   display: inline-block;
+    text-align: left;
+
+}
+
+#price {
+    color: green;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#per {
+    color: green;
+    font-size: 14px;
+}
+
+
+
