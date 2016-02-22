@@ -11,6 +11,10 @@ router.get('/profile', function (request, response, next) {
     response.render('profile');
 });
 
+router.get('/edit-profile', function (request, response, next) {
+    response.render('edit-profile');
+});
+
 router.get('/signup', function (request, response, next) {
     response.render('signup');
 });
