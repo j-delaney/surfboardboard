@@ -27,6 +27,31 @@ router.get('/list-gear/list-steps', function (request, response, next) {
     response.render('list-gear/list-steps');
 });
 
+router.post('/api/list', function (request, response, next) {
+    var newId = data.tents.length;
+    data.tents.push({
+        "id": newId,
+        "owner": 0,
+        "title": request.body.title,
+        "pictures": [
+            "/img/upload/items/sundome1.jpg"
+        ],
+        "people": request.body.holds,
+        "price": request.body.price,
+        "brand": "Coleman",
+        "reviews": {
+            "count": 1,
+            "stars": 5
+        },
+        "location": request.body.address,
+        "description": request.body.desc
+    });
+
+    response.json({
+        id: newId
+    });
+});
+
 router.get('/list-gear/list-message', function (request, response, next) {
     response.render('list-gear/list-message');
 });
@@ -51,8 +76,10 @@ router.get('/list-gear/list-edit-description', function (request, response, next
     response.render('list-gear/list-price');
 });
 
-router.get('/list-gear/listing-confirmation', function (request, response, next) {
-    response.render('list-gear/listing-confirmation');
+router.get('/list-gear/listing-confirmation/:id', function (request, response, next) {
+    response.render('list-gear/listing-confirmation', {
+        id: request.params['id']
+    });
 });
 
 

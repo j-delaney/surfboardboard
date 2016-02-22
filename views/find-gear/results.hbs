@@ -19,33 +19,35 @@
 </div>
 
 <div id="fixed-img">
-    <h1 class="text-center">Tents</h1>
+    <h3 class="text-center">Your Search Results</h3>
 </div>
 
 <div id="filter-container">
-    <i class="fa fa-cogs"></i>
+    <img id="filter-icon" src="/img/settingsIcon.png">
+    <!-- <i class="fa fa-cogs"></i> -->
 </div>
 
 <div id="filter-overlay">
     <div class="container-fluid">
         <div class="row">
+            <h1> Filter Search Results </h1>
             <div class="col-md-6 col-sm-6 col-xs-6" id="checkin">
                 <div class="date-box">
-                    Check In <br/>
+                    Pickup <br/>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <input type="text">
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6" id="checkout">
                 <div class="date-box">
-                    Check Out <br/>
+                    Return <br/>
                     <i class="fa fa-chevron-down"></i>
                 </div>
                 <input type="text">
             </div>
         </div>
 
-        <label for="num-people">Number of People</label>
+        <label for="num-people" class="dropdown">Number of People</label>
         <select name="numPeople" id="num-people">
             <option value="none">Not Specified</option>
             <option value="1">1</option>
@@ -54,8 +56,8 @@
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-
-        <label for="select-brand">Brand</label>
+        <br />
+        <label for="select-brand" class="dropdown">Brand</label>
         <select name="brand" id="select-brand">
             <option value="none">Not Specified</option>
             {{#each brands}}

@@ -3,6 +3,15 @@
     height: 100px;
 }
 
+#filter-icon {
+    width: 25px;
+
+    margin: 6px;
+    margin-top: -5px;
+}
+
+
+
 #content {
     margin-top: 110px;
 }
@@ -40,12 +49,12 @@
     width: 50px;
     border-radius: 100%;
     color: white;
-
     padding-left: 7px;
     padding-top: 9px;
+    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.6);
 }
 
-#filter-container i {
+#filter-container {
     font-size: 30px;
 }
 
@@ -59,6 +68,13 @@
     top: 10%;
     z-index: 200;
     border: 1px solid #DDDDDD;
+    padding: 15px;
+    text-align: center;
+}
+
+#filter-overlay h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
 .date-box {
@@ -68,6 +84,13 @@
     cursor: pointer;
     z-index: 1;
 }
+
+
+.dropdown {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
 
 #filter-overlay input {
     z-index: 0;
