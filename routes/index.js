@@ -77,6 +77,10 @@ module.exports = function (app, passport) {
         })
     );
 
+    app.get('/test', function (request, response, next) {
+        response.render('usertest');
+    })
+
     app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'user_friends']}));
 
     app.get('/edit-profile', function (request, response, next) {

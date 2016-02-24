@@ -25,6 +25,11 @@ function hideMenu() {
 }
 
 $(document).ready(function () {
+    mixpanel.track('page viewed', {
+        'page name' : document.title,
+        'url' : window.location.pathname
+    });
+
     $menuDarkOverlay = $('#menu-dark-overlay');
     $menu = $('#menu');
     $openMenu = $('#open-menu');
