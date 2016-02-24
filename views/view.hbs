@@ -31,13 +31,15 @@
 
 <div class="container-fluid">
     <div class="row" id="attributes">
-        <h1 id="product-name">Gorgeous Tent. Comfy and Cozy <h4 class="pull-right" id="price">$5<p id="per">per day</p></h4></h1>
+        <h1 id="product-name">{{title}}
+            <h4 class="pull-right" id="price">${{price}}<p id="per">per day</p></h4>
+        </h1>
     </div>
 
     <div class="row" id="info">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <h4><strong>Description</strong></h4>
-            <p>This tent is the best tent ever! It comfortably fits two people, and is ultralightweight for backpacking, plus it's in great shape! The model is a North Face Sierra.</p>
+            <p>{{description}}</p>
         </div>
     </div>
 
