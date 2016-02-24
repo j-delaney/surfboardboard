@@ -6,9 +6,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var settings = require('./settings.json');
-
-var routes = require('./routes/index');
+// Setup database
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOURI, {}, function (error) {
+    if (error) {
+        console.error('Error connecting to', process.env.MONGOURI);
+        console.error(error);
+        process.exit(1);
+    }
+});
 
 var app = express();
 
@@ -82,7 +88,13 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+var passport = require('passport');
+var session = require('express-session');
+app.use(session({secret: 'ilovescotchscotchyscotchscotch'})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+
+var routes = require('./routes/index')(app, passport);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
