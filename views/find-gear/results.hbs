@@ -70,6 +70,7 @@
                 {{#if_even @index}}
                     <a class="listing-box" href="/view/{{@index}}">
                         <img src="{{pictures.[0]}}" class="img-responsive">
+                        <div class="price">${{price}}</div>
                         <p>{{title}}</p>
                     </a>
                 {{/if_even}}
@@ -80,6 +81,7 @@
                 {{#if_odd @index}}
                     <a class="listing-box" href="/view/{{@index}}">
                         <img src="{{pictures.[0]}}" class="img-responsive">
+                        <div class="price">${{price}}</div>
                         <p>{{title}}</p>
                     </a>
                 {{/if_odd}}
