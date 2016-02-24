@@ -42,6 +42,8 @@ $(document).ready(function () {
 
     $checkoutInput.datepicker({});
 
+    $('#apply-filter').on('click', hideFilterOverlay);
+
     $checkoutDateBox.on('click', function (event) {
         $checkoutInput.datepicker('show');
     });

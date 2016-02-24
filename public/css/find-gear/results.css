@@ -102,3 +102,13 @@
 .fa-home {
 	color: #ffffff;
 }
+
+#apply-filter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: deeppink;
+    color: white;
+    font-size: 24px;
+    width: 100%;
+}
