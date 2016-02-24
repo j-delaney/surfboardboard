@@ -79,6 +79,10 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'user_friends']}));
 
+    app.get('/edit-profile', function (request, response, next) {
+        response.render('edit-profile');
+    });
+
     app.get('/', function (request, response, next) {
         response.render('index');
     });
@@ -154,7 +158,6 @@ module.exports = function (app, passport) {
         });
     });
 
-
     app.get('/find-gear/choose-type', function (request, response, next) {
         response.render('find-gear/choose-type');
     });
@@ -184,4 +187,4 @@ module.exports = function (app, passport) {
     app.get('/find-gear/request-confirmation', function (request, response, next) {
         response.render('find-gear/request-confirmation');
     });
-}
+};

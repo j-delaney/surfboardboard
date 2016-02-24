@@ -1,6 +1,5 @@
-
 #main-img {
-      background: url('/img/coleman.jpg');
+    background: url('/img/coleman.jpg');
     width: 100px;
     height: 200px;
     background-position: center;
@@ -52,6 +51,8 @@
 }
 
 #top-bar-steps {
+	background: url('/img/searchresults.png') no-repeat left center;
+    height: 100px;
     padding: 5px;
     font-size: 24px;
     position: fixed;
@@ -59,10 +60,14 @@
     top: 0;
     left: 0;
     z-index: 50;
-    color: black;
+    color: white;
     background-color: #EFEFEF;
     text-align: center;
     font-size: 100%;
+}
+
+.fa-home {
+	color: white;
 }
 
 #back-arrow {
