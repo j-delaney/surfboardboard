@@ -6,7 +6,7 @@
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
     /*background: url('/img/rentgear.png') no-repeat left bottom ; */
-    height: 300px;
+    height: 250px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -52,10 +52,10 @@
 
 #top-bar-steps {
 	background: url('/img/searchresults.png') no-repeat left center;
-    height: 100px;
+    height: 60px;
     padding: 5px;
     font-size: 24px;
-    position: fixed;
+  /*  position: fixed;*/
     width: 100%;
     top: 0;
     left: 0;
@@ -86,7 +86,7 @@
     margin-right: auto;
     text-align: center;
     display: block;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 #input-upload {
@@ -135,4 +135,22 @@
 #request-to-rent:hover {
     color: white;
     text-decoration: none;
+}
+
+.fa-square-o {
+    display: none;
+}
+
+#input-desc {
+    font-size: 20px;
+}
+
+#top-bar {
+    position: static;
+}
+
+.steps-head {
+    z-index: 52;
+    position: relative;
+    margin-top: -50px;
 }

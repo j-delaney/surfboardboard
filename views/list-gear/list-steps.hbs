@@ -15,13 +15,13 @@
             <i class="fa fa-bars" id="open-menu"></i>
         </div>
     </div>
-    <h2>5 steps to list</h2>
+    <h3 class="steps-head">5 steps to list</h3>
 </div>
 
 <div id="main-img">
-    <img id="photos-icon" src="/img/CameraIcon.png">
+     <img id="photos-icon" src="/img/CameraIcon.png">
     <h5 id="add-photos">
-        <button id="upload">Add Photo</button>
+        <button id="upload"> Add Photo</button>
         <input type="file" id="input-upload" accept="image/*;capture=camera">
     </h5>
 </div>
@@ -44,6 +44,38 @@
             </div>
         </a>
 
+
+        <a href="#">
+            <div class="row">
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <h3 id="StepHeader">Tent Capacity</h3>
+                    <h4 id="StepSubtitle">How many people can your tent hold?</h4>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                    <i class="fa fa-square-o"></i>
+                </div>
+            </div>
+
+            <div class="dropper">
+                <!-- <h4 id="input">How many people can your tent hold?</h4> -->
+                <!-- <input id="input-holds" type="text"/> -->
+                <select name="numPeople" id="num-people">
+                    <option value="none">select # of</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="5">6</option>
+                    <option value="5">7</option>
+                    <option value="5">8</option>
+                    <option value="5">9</option>
+                    <option value="5">10+</option>
+        </select>
+                <h4 id="inline">persons</h4>
+            </div>
+        </a>
+
         <a href="#">
             <div class="row">
                 <div class="col-md-10 col-sm-10 col-xs-10">
@@ -56,7 +88,7 @@
             </div>
 
             <div class="dropper">
-                <textarea cols="20" rows="5" id="input-desc"></textarea>
+                <textarea cols="35" rows="5" id="input-desc"></textarea>
             </div>
         </a>
 
@@ -91,26 +123,9 @@
             <div class="dropper">
                 <input id="input-address" type="text"/>
             </div>
-
         </a>
 
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 id="StepHeader">Product Details</h3>
-                    <h4 id="StepSubtitle">Specify Important Details</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
 
-            <div class="dropper">
-                <h4 id="input">How many people can your tent hold?</h4>
-                <input id="input-holds" type="text"/>
-                <h4 id="inline">persons</h4>
-            </div>
-        </a>
     </div>
 </div>
 
