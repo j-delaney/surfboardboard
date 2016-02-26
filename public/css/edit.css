@@ -1,0 +1,153 @@
+#view-img {
+    margin-top: 0;
+}
+
+#attributes {
+    /*margin-top: 10px;*/
+
+    font-size: 16px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.container-fluid {
+    padding-bottom: 50px;
+}
+
+#dates {
+    border-bottom: 1px solid #cccccc;
+    text-align: center;
+}
+
+.dates-box {
+    padding: 10px 0;
+}
+
+#left-dates {
+    border-right: 1px solid #cccccc;
+}
+
+#info {
+    border-bottom: 1px solid #cccccc;
+}
+
+#owner-info {
+    border-bottom: 1px solid #cccccc;
+}
+
+
+#owner-info img {
+    width: 100px;
+}
+
+#post-listing {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #d43f3a;
+    color: white;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#post-listing:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.fa-home {
+    color: #ffffff;
+}
+
+.pickupReturn {
+    margin-bottom: -7px;
+    color: grey;
+    margin-top: 0px;
+}
+
+.date {
+    font-weight: bold;
+    margin-bottom: -10px;
+
+}
+
+#product-name {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: left;
+
+}
+
+#price {
+    color: green;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+#per {
+    color: green;
+    font-size: 14px;
+}
+
+.editable {
+    display: inline-block;
+
+    -webkit-transition: all 0.05s ease-in-out;
+    -moz-transition: all 0.05s ease-in-out;
+    -o-transition: all 0.05s ease-in-out;
+    transition: all 0.05s ease-in-out;
+}
+
+.editable textarea {
+}
+
+.edit {
+    border: 1px dashed #6f6f6f;
+    background-color: #dea8a5;
+    padding: 2px;
+}
+
+.editing {
+
+}
+
+.edited {
+    border: 1px dashed #6f6f6f;
+    background-color: #aedeb4;
+    padding: 2px;
+}
+
+#edit-price input {
+    width: 50px;
+}
+
+.editable input {
+}
+
+.input-group-addon {
+    background: #25f412;
+}
+
+#product-img {
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#photos-icon {
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+#product-img input {
+    display: none;
+}
