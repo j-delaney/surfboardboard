@@ -1,4 +1,6 @@
 var data = require('./../data.json');
+var Item = require('./../models/item');
+var User = require('./../models/user');
 
 module.exports = function (app) {
     app.get('/edit', function (request, response, next) {
@@ -22,12 +24,25 @@ module.exports = function (app) {
     });
 
     app.get('/view/:id', function (request, response, next) {
-        var tent = data.tents[request.params['id']];
-        var owner = data.users[tent.owner];
+        Item.findById(request.params['id'], function (err, item) {
+            if (err) {
+                throw err;
+            }
 
-        response.render('view', {
-            tent: tent,
-            owner: owner
+            if (!item) {
+                response.send('Not found');
+            }
+
+            User.findById(item.owner, function (err, owner) {
+                if (err) {
+                    throw err;
+                }
+
+                response.render('view', {
+                    tent: item,
+                    owner: owner
+                });
+            });
         });
     });
 };

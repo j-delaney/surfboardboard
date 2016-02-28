@@ -10,7 +10,8 @@ var itemSchema = new Schema({
     city: String,
     zip: Number,
     title: String,
-    custom: Schema.Types.Mixed
+    custom: Schema.Types.Mixed,
+    type: String
 });
 
 itemSchema.methods.baseValidate = function () {
@@ -58,6 +59,17 @@ itemSchema.methods.baseValidate = function () {
     // Title. Set, not blank.
     if (util.isNullOrUndefined(this.title) || this.title.trim() === '') {
         return 'You must set a title';
+    }
+
+    // Type. Set, in [tent].
+    if (util.isNullOrUndefined(this.type)) {
+        return 'Type must be set.'
+    }
+
+    var types = ['tent'];
+
+    if (types.indexOf(this.type) === -1) {
+        return 'Invalid type.'
     }
 
     return false;

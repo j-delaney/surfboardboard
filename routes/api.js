@@ -20,7 +20,8 @@ module.exports = function (app) {
             custom: {
                 people: request.body.people
             },
-            owner: request.user.id
+            owner: request.user.id,
+            type: 'tent'
         });
 
         error = item.baseValidate();

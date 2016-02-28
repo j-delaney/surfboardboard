@@ -1,5 +1,12 @@
 #view-img {
-    margin-top: 0;
+    height: 200px;
+    text-align: center;
+}
+
+#view-img img {
+    height: 100%;
+    margin: 0 auto;
+    width: auto;
 }
 
 #attributes {
