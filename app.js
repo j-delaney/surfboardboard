@@ -30,7 +30,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var passport = require('passport');
 var session = require('express-session');
-app.use(session({secret: 'ilovescotchscotchyscotchscotch'})); // session secret
+var MongoStore = require('connect-mongo')(session);
+app.use(session({
+    secret: 'ilovescotchscotchyscotchscotch',
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection
+    })
+}));
 
 var routes = require('./routes')(app, passport);
 
