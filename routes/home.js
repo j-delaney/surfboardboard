@@ -21,6 +21,11 @@ module.exports = function (app) {
         response.render('signup');
     });
 
+    app.get('/profile/creation', function (request, response, next) {
+        response.render('profile/creation');
+    });
+
+
     app.get('/view/:id', function (request, response, next) {
         var tent = data.tents[request.params['id']];
         var owner = data.users[tent.owner];
