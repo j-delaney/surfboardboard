@@ -31,4 +31,5 @@ body, html {
 .main-btn a {
     color: white;
     font-size: 2em;
+    text-decoration: none;
 }

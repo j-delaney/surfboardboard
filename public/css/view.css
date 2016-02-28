@@ -1,5 +1,12 @@
 #view-img {
-    margin-top: 0;
+    height: 200px;
+    text-align: center;
+}
+
+#view-img img {
+    height: 100%;
+    margin: 0 auto;
+    width: auto;
 }
 
 #attributes {
@@ -47,7 +54,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #d43f3a;
+    background-color: #FF3366;
     color: white;
     line-height: 50px;
     font-size: 20px;
@@ -86,13 +93,13 @@
 }
 
 #price {
-    color: green;
+    color: #6FE840;
     display: inline-block;
     margin-right: 15px;
     font-size: 25px;
 }
 
 #per {
-    color: green;
+    color: #6FE840;
     font-size: 14px;
 }

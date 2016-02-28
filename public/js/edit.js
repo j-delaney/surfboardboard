@@ -8,12 +8,17 @@ $(document).ready(function () {
         var $input = $container.find('input');
 
         // See whether the user has set this once already.
-        if ($element.hasClass('edited')) {
+        if ($element.hasClass('edit-done')) {
             $input.val($element.text())
         }
 
         var placeholder = $element.data('placeholder');
         $input.attr('placeholder', placeholder);
+
+        var type = $element.data('type');
+        if (type) {
+            $input.attr('type', type);
+        }
 
         return $container;
     }
@@ -23,6 +28,11 @@ $(document).ready(function () {
             '<textarea class="form-control"></textarea>'+
             '<div class="input-group-addon"><i class="fa fa-check"></i></div>' +
             '</div>');
+
+        var $textarea = $container.find('textarea');
+
+        var placeholder = $element.data('placeholder');
+        $textarea.attr('placeholder', placeholder);
 
         return $container;
     }
@@ -37,14 +47,23 @@ $(document).ready(function () {
 
             var val = $input.val().trim();
 
-            $parent.removeClass('editing');
+            $parent.removeClass('edit-in-progress');
 
             if (val === '') {
-                $parent.text('Tap to edit').addClass('edit');
+                $parent.text($parent.data('default')).addClass('edit-undone');
             } else {
-                $parent.addClass('edited').text(val);
+                $parent.addClass('edit-done').text(val);
             }
 
+        });
+    }
+
+    /**
+     * Finds all edits in progress and automatically finishes them.
+     */
+    function finishInProgress() {
+        $('.edit-in-progress').each(function () {
+            $(this).find('.input-group-addon').click();
         });
     }
 
@@ -52,9 +71,11 @@ $(document).ready(function () {
         if ($(event.target).hasClass('input-group-addon') || $(event.target).hasClass('fa-check')) {
             return;
         }
-        if ($(this).hasClass('editing')) {
+        if ($(this).hasClass('edit-in-progress')) {
             return;
         }
+
+        finishInProgress();
 
         var $container;
         if ($(this).hasClass('textarea')) {
@@ -64,9 +85,12 @@ $(document).ready(function () {
         }
         bindEditingEvents($container);
 
-        $(this).removeClass('edit').removeClass('edited').addClass('editing');
+        $(this).removeClass('edit-undone').removeClass('edit-done').addClass('edit-in-progress');
         $(this).html('').append($container);
         $container.find('input,textarea').focus();
+    }).each(function () {
+        $(this).addClass('edit-undone');
+        $(this).text($(this).data('default'));
     });
 
     function shake($e) {
@@ -86,27 +110,37 @@ $(document).ready(function () {
     }
 
     $('#post-listing').on('click', function (event) {
+        finishInProgress();
+
         var done = true;
 
         $('.editable').each(function (index, $element) {
-            if ($(this).hasClass('edit') || $(this).hasClass('editing')) {
+            if ($(this).hasClass('edit-undone') || $(this).hasClass('edit-in-progess')) {
                 done = false;
                 shake($(this));
             }
         });
 
         if (done) {
-            var data = {
-                title: $('#set-title').text().trim(),
-                desc: $('#set-desc').text().trim(),
-                price: $('#set-price').text().trim(),
-                address: $('#set-location').text().trim(),
-                holds: 2
-            };
+            var data = {};
+            $('.editable').each(function (index, $element) {
+                data[$(this).data('field')] = $(this).text().trim();
+            });
 
-            $.post('/api/list', data, function (response, textStatus) {
-                var id = response.id;
-                window.location.href = '/list-gear/listing-confirmation/' + id;
+            $.ajax({
+                type: 'POST',
+                url: '/api/create/tent',
+                data: data,
+                success: function (response, textStatus) {
+                    var id = response.id;
+                    window.location.href = '/list-gear/listing-confirmation/' + id;
+                },
+                error: function (response, textStatus) {
+                    if (response.status === 401) {
+                        return alert('You must be logged in');
+                    }
+                    console.log(response);
+                }
             });
         }
     });

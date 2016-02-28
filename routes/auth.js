@@ -9,7 +9,7 @@ module.exports = function (app, passport) {
             clientID: '437731739750205',
             clientSecret: process.env.FBSECRET,
             callbackURL: "http://localhost:3000/auth/facebook/callback",
-            profileFields: ['id', 'displayName', 'profileUrl', 'email']
+            profileFields: ['id', 'displayName', 'profileUrl', 'email', 'picture.type(large)']
         },
         function (token, refreshToken, profile, done) {
             process.nextTick(function () {
@@ -31,6 +31,7 @@ module.exports = function (app, passport) {
                         newUser.facebook.name = profile.displayName;
                         newUser.facebook.email = profile.emails[0].value;
                         newUser.facebook.profileUrl = profile.profileUrl;
+                        newUser.facebook.picture = profile.photos[0].value;
 
                         // save our user to the database
                         newUser.save(function (err) {

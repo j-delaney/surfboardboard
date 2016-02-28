@@ -109,17 +109,17 @@
 .editable textarea {
 }
 
-.edit {
+.edit-undone {
     border: 1px dashed #6f6f6f;
     background-color: #dea8a5;
     padding: 2px;
 }
 
-.editing {
+.edit-in-progress {
 
 }
 
-.edited {
+.edit-done {
     border: 1px dashed #6f6f6f;
     background-color: #aedeb4;
     padding: 2px;
