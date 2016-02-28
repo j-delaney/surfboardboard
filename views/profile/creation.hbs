@@ -1,0 +1,101 @@
+{{#extend "title"}}
+    SurfBoardBoard
+{{/extend}}
+
+{{#extend "css"}}
+    <link rel="stylesheet" href="/css/profile/creation.css"/>
+{{/extend}}
+
+<div class="container-fluid" id="top-bar">
+    <div class="pull-left">
+        <a href="/"><i class="fa fa-home"></a></i>
+    </div>
+    <div class="pull-right">
+        <i class="fa fa-bars" id="open-menu"></i>
+    </div>
+</div>
+
+
+
+
+<div class="container" id="choose-adventure">
+    <h1 class="editProf">Edit Profile</h1>
+    <div style="margin: 0 auto; width: 100px; height: 100px;">
+        <img id="logo" class="img-circle" style="width: 100px; height: 100px;" src="/img/blankbear.jpg">
+    </div>
+
+    <h5 id="add-photos">
+        <button id="upload"> Add Profile Picture</button>
+        <input type="file" id="input-upload" accept="image/*;capture=camera">
+    </h5>
+</div>
+
+<!-- <div>
+<p id="inline">Name:</p> <input id="input-price" type="text"/>
+</div>
+
+<div>
+<p id="inline">Email:</p> <input id="input-price" type="text"/>
+</div>
+<div>
+<p id="inline">City:</p> <input id="input-price" type="text"/>
+</div>
+<div>
+<p id="inline">Zip:</p> <input id="input-price" type="text"/>
+</div>
+ -->
+
+<div class="container">
+ <form class="form-horizontal">
+ 
+  <div class="form-group">
+    <label for="inputName" class="col-sm-2 control-label">Full Name</label>
+    <div class="col-sm-10">
+      <input type="name" class="form-control input-lg" class="form-control" id="inputName" placeholder="Full Name">
+    </div>
+  </div>
+
+   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control input-lg" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+
+     <div class="form-group">
+    <label for="City" class="col-sm-2 control-label" id="block">Location</label>
+
+        <div class="col-xs-7 col-sm-7 col-md-7">
+            <input type="text" class="form-control input-lg" class="form-control" placeholder="City">
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+            <input type="text" class="form-control input-lg" class="form-control" placeholder="ZIP">
+        </div>
+    </div>
+
+    <div class="form-group">
+    <label for="inputZIP" class="col-sm-2 control-label" id="block">Phone</label>
+    
+    <div class="col-xs-7 col-sm-7 col-md-7">
+            <input type="text" class="form-control input-lg" class="form-control" placeholder="(123) 456-7890">
+        </div>
+    </div>
+
+    <label class="col-sm-2 control-label margin-top" id="about">About</label>
+    <label class="col-sm-2 control-label greytext" id="about"> Grizz is all about community and trust. Share a little bit about yourself and your personality. Not only will it enhance your profile, but people will be more likely to rent with you.</label>
+    <textarea class="form-control placeholder margintop15" rows="5" placeholder="Eg: Hi, my name's Sally the bear. My day job is selling seashells by the seashore, but on weekends you can find me tearing up the waves in Del Mar."></textarea>
+
+</form>
+
+<button type="button" class="btn btn-primary btn-lg btn-block" id="submit">Save Profile</button>
+
+</div>
+
+
+
+
+
+
+{{#extend "js"}}
+    <script src="/js/main.js"></script>
+{{/extend}}

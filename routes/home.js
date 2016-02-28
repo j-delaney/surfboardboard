@@ -23,6 +23,11 @@ module.exports = function (app) {
         response.render('signup');
     });
 
+    app.get('/profile/creation', function (request, response, next) {
+        response.render('profile/creation');
+    });
+
+
     app.get('/view/:id', function (request, response, next) {
         Item.findById(request.params['id'], function (err, item) {
             if (err) {
