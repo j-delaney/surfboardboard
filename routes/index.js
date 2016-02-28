@@ -136,30 +136,6 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/list-gear/list-message', function (request, response, next) {
-        response.render('list-gear/list-message');
-    });
-
-    app.get('/list-gear/list-edit-title', function (request, response, next) {
-        response.render('list-gear/list-edit-title');
-    });
-
-    app.get('/list-gear/list-edit-description', function (request, response, next) {
-        response.render('list-gear/list-edit-description');
-    });
-
-    app.get('/list-gear/list-price', function (request, response, next) {
-        response.render('list-gear/list-price');
-    });
-
-    app.get('/list-gear/list-product-details', function (request, response, next) {
-        response.render('list-gear/list-product-details');
-    });
-
-    app.get('/list-gear/list-edit-description', function (request, response, next) {
-        response.render('list-gear/list-price');
-    });
-
     app.get('/list-gear/listing-confirmation/:id', function (request, response, next) {
         response.render('list-gear/listing-confirmation', {
             id: request.params['id']
