@@ -1,19 +1,14 @@
 #fixed-img {
     background: url('/img/searchresults.png') no-repeat left center;
-    height: 100px;
+    height: 75px;
 }
 
-#filter-icon {
-    width: 25px;
-
-    margin: 6px;
-    margin-top: -5px;
+#filter {
+    margin-top: 90px;
 }
-
-
 
 #content {
-    margin-top: 110px;
+    margin-top: 20px;
 }
 
 .listing-box {
@@ -36,7 +31,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.5);
+    background: #2f2e2e;
+    color: #ffffff;
+    opacity: 0.8;
     height: inherit;
 }
 
@@ -50,44 +47,6 @@
 
 .listing-box p {
     text-align: center;
-}
-
-#filter-container {
-    background-color: rgb(255, 51, 102);
-    z-index: 30;
-    position: fixed;
-    right: 30px;
-    top: 75px;
-    height: 50px;
-    width: 50px;
-    border-radius: 100%;
-    color: white;
-    padding-left: 7px;
-    padding-top: 9px;
-    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.6);
-}
-
-#filter-container {
-    font-size: 30px;
-}
-
-#filter-overlay {
-    display: none;
-    position: fixed;
-    background-color: #FFFFFF;
-    width: 80%;
-    height: 80%;
-    left: 10%;
-    top: 10%;
-    z-index: 200;
-    border: 1px solid #DDDDDD;
-    padding: 15px;
-    text-align: center;
-}
-
-#filter-overlay h1 {
-    font-size: 25px;
-    margin-bottom: 25px;
 }
 
 .date-box {
@@ -104,24 +63,6 @@
     font-size: 15px;
 }
 
-
-#filter-overlay input {
-    z-index: 0;
-    width: 1px;
-    height: 1px;
-    margin-top: -10px;
-}
-
 .fa-home {
 	color: #ffffff;
-}
-
-#apply-filter {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: deeppink;
-    color: white;
-    font-size: 24px;
-    width: 100%;
 }
