@@ -91,10 +91,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 var passport = require('passport');
 var session = require('express-session');
 app.use(session({secret: 'ilovescotchscotchyscotchscotch'})); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
 
-var routes = require('./routes/index')(app, passport);
+var routes = require('./routes')(app, passport);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
