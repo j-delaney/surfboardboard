@@ -14,73 +14,85 @@
         <i class="fa fa-bars" id="open-menu"></i>
     </div>
 </div>
+<div id="product-img">
+    <img id="photos-icon" src="/img/CameraIcon.png">
+    <h5 id="add-photos">
+        <button id="img-upload-btn">Add Photo</button>
+    </h5>
+</div>
 
-<form action="/edit">
-    <div id="product-img">
-        <img id="photos-icon" src="/img/CameraIcon.png">
-        <h5 id="add-photos">
-            <button id="upload">Add Photo</button>
-            <input type="file" id="input-upload" accept="image/*;capture=camera">
-        </h5>
+{{#if errors}}
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            {{#each errors}}
+                <p>{{this}}</p>
+            {{/each}}
+        </div>
     </div>
+{{/if}}
 
-    <div class="container-fluid">
-        <div class="row" id="attributes">
-            <div class="col-md-8 col-sm-8 col-xs-8">
-                <div class="editable"
-                     data-field="title"
-                     data-default="Tap to edit title"
-                     data-placeholder="Title"></div>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4">
-                $
-                <div class="editable"
-                     data-type="number"
-                     data-default="Price"
-                     data-field="price"></div>
-                <p id="per">per day</p>
-            </div>
+<div class="container-fluid">
+    <div class="row" id="attributes">
+        <div class="col-md-8 col-sm-8 col-xs-8">
+            <div class="editable"
+                 data-field="title"
+                 data-default="Tap to edit title"
+                 data-placeholder="Title">{{form.title}}</div>
         </div>
-
-        <div class="row" id="info">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <h4><strong>Description</strong></h4>
-                <p>
-                <div class="editable textarea"
-                     data-field="description"
-                     data-default="Tap to edit description"
-                     data-placeholder="Description"></div>
-                </p>
-                <p>
-                    <strong>Number of people tent holds:</strong>
-                <div class="editable"
-                     data-type="number"
-                     data-field="people"
-                     data-default="Tap to edit number of people tent holds"
-                     data-placeholder="Number of people"></div>
-                </p>
-            </div>
-        </div>
-
-        <div class="row" id="info">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <h4 class="text-center"><i class="fa fa-map-marker"></i> <strong>
-                    <div class="editable"
-                         data-field="city"
-                         data-default="Tap to edit city"
-                         data-placeholder="City"></div>
-                    <div class="editable"
-                         data-field="zip"
-                         data-default="Tap to edit zip"
-                         data-placeholder="Zip"></div>
-                </strong></h4>
-            </div>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+            $
+            <div class="editable"
+                 data-type="number"
+                 data-default="Price"
+                 data-field="price"{{form.price}}></div>
+            <p id="per">per day</p>
         </div>
     </div>
 
-    <div id="post-listing" href="/find-gear/request-confirmation">
-        Post Listing
+    <div class="row" id="info">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4><strong>Description</strong></h4>
+            <p>
+            <div class="editable textarea"
+                 data-field="description"
+                 data-default="Tap to edit description"
+                 data-placeholder="Description">{{form.description}}</div>
+            </p>
+            <p>
+                <strong>Number of people tent holds:</strong>
+            <div class="editable"
+                 data-type="number"
+                 data-field="people"
+                 data-default="Tap to edit number of people tent holds"
+                 data-placeholder="Number of people">{{form.people}}</div>
+            </p>
+        </div>
     </div>
+
+    <div class="row" id="info">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <h4 class="text-center"><i class="fa fa-map-marker"></i> <strong>
+                <div class="editable"
+                     data-field="city"
+                     data-default="Tap to edit city"
+                     data-placeholder="City">{{form.city}}</div>
+                <div class="editable"
+                     data-field="zip"
+                     data-default="Tap to edit zip"
+                     data-placeholder="Zip">{{form.zip}}</div>
+            </strong></h4>
+        </div>
+    </div>
+</div>
+
+<div id="post-listing" href="/find-gear/request-confirmation">
+    Post Listing
+</div>
+
+<form action="/edit" method="post" style="display: none" enctype="multipart/form-data">
+    <input type="file" id="img-upload" name="picture" accept="image/*;capture=camera">
 </form>
 
 {{#extend "js"}}
