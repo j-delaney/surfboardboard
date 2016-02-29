@@ -22,7 +22,7 @@ body, html {
 }
 
 .line-separator {
-    margin-top: 20px;
+    margin-top: 15px;
     height: 1px;
     background: #c1bdbd;
     border-bottom: 1px solid #717171;
@@ -36,6 +36,10 @@ body, html {
     margin-top: 10px;
     background-color: #FF3366;
     color: white;
+}
+
+#location {
+    margin-bottom: -15px;
 }
 
 #choose-adventure {
