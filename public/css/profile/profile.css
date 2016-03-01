@@ -1,0 +1,81 @@
+body, html {
+    background: url('/img/home.png') no-repeat right bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    height: 100%;
+
+    color: white;
+}
+
+#name {
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#photo {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.line-separator {
+    margin-top: 15px;
+    height: 1px;
+    background: #c1bdbd;
+    border-bottom: 1px solid #717171;
+}
+
+#top-bar {
+    position: absolute;
+}
+
+#contact {
+    margin-top: 10px;
+    background-color: #FF3366;
+    color: white;
+}
+
+#location {
+    margin-bottom: -15px;
+}
+
+#choose-adventure {
+    margin-bottom: 40px;
+}
+
+.main-btn {
+    height: 100px;
+    line-height: 100px;
+    background-color: rgba(255, 255, 255, 0.10);
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.main-btn a {
+    color: white;
+    font-size: 2em;
+}
+
+/*BELOW ARE CHANGES TO THIS PAGE (ABOVE IS EVERYTHING FROM INDEX CSS)
+*/
+
+.pull-left i {
+    color: white;
+}
+
+#inline {
+    display: inline;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.container {
+    margin: auto;
+}
+
+#block {
+    display: block
+}

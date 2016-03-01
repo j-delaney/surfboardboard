@@ -1,0 +1,43 @@
+{{#extend "title"}}
+    SurfBoardBoard
+{{/extend}}
+
+{{#extend "css"}}
+    <link rel="stylesheet" href="/css/profile/profile.css"/>
+{{/extend}}
+
+<div class="container-fluid" id="top-bar">
+    <div class="pull-left">
+        <a href="/"><i class="fa fa-home"></a></i>
+    </div>
+    <div class="pull-right">
+        <i class="fa fa-bars" id="open-menu"></i>
+    </div>
+</div>
+
+<div class="container" id="name">
+    <h2 class="name">User Name</h2>
+</div>
+
+<div class="container" id="photo">
+    <img id="logo" class="img-circle" style="width: 100px; height: 100px;" src="/img/blankbear.jpg">
+</div>
+
+<button type="button" class="btn btn-primary btn-lg center-block" id="contact">Contact</button>
+
+<div class="line-separator"></div>
+
+<div class="row" id="location">
+            <h4 class="text-center"> <i class="fa fa-map-marker"></i> <strong>La Jolla</strong></h4>
+</div>
+
+<div class="line-separator"></div>
+
+<div class="container-fluid" id="about">
+    <h3>About</h3>
+    <p>User loves saving kittens. User also enjoys backpacking in the Sierra Nevadas and Rockies. User likes cooking 12 course meals for his woodland friends.</p>
+</div>
+
+{{#extend "js"}}
+    <script src="/js/main.js"></script>
+{{/extend}}

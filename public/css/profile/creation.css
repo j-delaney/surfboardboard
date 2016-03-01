@@ -38,6 +38,7 @@ body, html {
 
 .pull-left i {
     color: white;
+    position: static;
 }
 
 #add-photos {
@@ -66,7 +67,7 @@ body, html {
 .editProf {
     text-align: left;
     display: block;
-    margin-top: 90px;
+    margin-top: 25px;
 }
 
 #inline {
@@ -83,12 +84,14 @@ body, html {
 }
 
 .container {
-    margin-left: 40px;
-    margin-right: 40px;
+  /*  margin-left: 40px;
+    margin-right: 40px;*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #block {
-    display: block
+    display: block;
 }
 
 #about {
@@ -118,3 +121,13 @@ body, html {
 .margintop15 {
     margin-top: 15px;
 }
+
+div#top-bar {
+    position: static;
+}
+
+.block {
+    display: block;
+}
+
+

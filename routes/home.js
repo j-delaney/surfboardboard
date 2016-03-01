@@ -77,16 +77,16 @@ module.exports = function (app) {
         });
     });
 
-    app.get('/edit-profile', function (request, response, next) {
-        response.render('edit-profile');
+    app.get('/profile/edit-profile', function (request, response, next) {
+        response.render('profile/edit-profile');
     });
 
     app.get('/', function (request, response, next) {
         response.render('index');
     });
 
-    app.get('/profile', function (request, response, next) {
-        response.render('profile');
+    app.get('/profile/index', function (request, response, next) {
+        response.render('profile/index');
     });
 
     app.get('/signup', function (request, response, next) {
