@@ -1,4 +1,3 @@
-var data = require('./../data.json');
 var Item = require('./../models/item');
 var User = require('./../models/user');
 var path = require('path');
