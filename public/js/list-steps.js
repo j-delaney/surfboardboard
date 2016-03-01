@@ -6,7 +6,7 @@ $(document).ready(function () {
         if (val === '') {
             $('#upload').text('Add Photo')
         } else {
-            $('#upload').text('Photo Uploaded Successfully!')
+            $('#upload').text('Photo Uploaded!')
         }
     });
 

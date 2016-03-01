@@ -4,7 +4,7 @@ $(document).ready(function () {
         if (val === '') {
             $('#img-upload-btn').text('Add Photo')
         } else {
-            $('#img-upload-btn').text('Photo Uploaded Successfully!')
+            $('#img-upload-btn').text('Photo Uploaded!')
         }
     });
 
