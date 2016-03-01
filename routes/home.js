@@ -89,9 +89,9 @@ module.exports = function (app) {
 
                 return response.redirect('/list-gear/listing-confirmation/' + item.id);
             });
+        } else {
+            next();
         }
-
-        next();
     });
 
     app.get('/', function (request, response, next) {
