@@ -29,7 +29,8 @@ module.exports = function (app) {
             custom: {
                 people: request.body.people
             },
-            type: 'tent'
+            type: 'tent',
+            newEdit: false
         });
 
         if (request.isAuthenticated()) {

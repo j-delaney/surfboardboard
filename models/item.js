@@ -13,6 +13,7 @@ var itemSchema = new Schema({
     custom: Schema.Types.Mixed,
     type: String,
     published: Boolean,
+    newEdit: Boolean // Whether it was made with the new /edit page
 });
 
 itemSchema.methods.baseValidate = function () {
