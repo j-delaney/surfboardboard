@@ -6,4 +6,5 @@ module.exports = function (app, passport) {
     require('./list-gear')(app);
     require('./home')(app);
     require('./api')(app);
+    require('./admin')(app);
 };

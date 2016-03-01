@@ -1,0 +1,54 @@
+{{#extend "title"}}
+    Admin Analytics
+{{/extend}}
+
+{{#extend "css"}}
+    <link rel="stylesheet"
+          href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
+{{/extend}}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Created</th>
+        <th>User</th>
+        <th>Item</th>
+        <th>New Edit</th>
+        <th>Error Rate</th>
+        <th>Rating</th>
+        <th>Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {{#each tracks}}
+        <tr>
+            <td>{{date created}}</td>
+            <td><a href="{{user.facebook.profileUrl}}" target="_blank">{{user.facebook.name}}</a>
+            </td>
+            <td><a href="/view/{{item}}" target="_blank">Link</a></td>
+            <td>{{newEdit}}</td>
+            <td>{{errorRate}}</td>
+            {{#if feedback}}
+                <td>{{feedback.rating}}</td>
+                <td>{{feedback.comment}}</td>
+            {{else}}
+                <td></td>
+                <td></td>
+            {{/if}}
+        </tr>
+    {{/each}}
+
+    </tbody>
+</table>
+
+
+{{#extend "js"}}
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $('table').DataTable();
+        });
+    </script>
+{{/extend}}

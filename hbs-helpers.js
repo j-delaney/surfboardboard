@@ -1,4 +1,5 @@
 var hbs = require('hbs');
+var moment = require('moment')
 
 // Create ability to extend layouts.
 var blocks = {};
@@ -57,4 +58,13 @@ hbs.registerHelper('ifEq', function (v1, v2, options) {
         return options.fn(this);
     }
     return options.inverse(this);
+});
+
+//  format an ISO date using Moment.js
+//  http://momentjs.com/
+//  moment syntax example: moment(Date("2011-07-18T15:50:52")).format("MMMM YYYY")
+//  usage: {{dateFormat creation_date format="MMMM YYYY"}}
+hbs.registerHelper('date', function (context, block) {
+    var f = block.hash.format || 'YYYY-MM-DD HH:mm:ss';
+    return moment(new Date(context)).format(f);
 });

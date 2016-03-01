@@ -103,7 +103,8 @@ module.exports = function (app) {
         Track.findOneAndUpdate({
             session: request.session.track
         }, {
-            user: request.user.id
+            user: request.user.id,
+            item: request.params['id']
         }, function (err) {
             if (err) {
                 throw err;
