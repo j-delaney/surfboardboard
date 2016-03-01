@@ -1,6 +1,15 @@
 $(document).ready(function () {
     $stepsA = $('#steps').children('.link-list-item');
 
+    $('#input-upload').on('change', function (event) {
+        var val = $(this).val().trim();
+        if (val === '') {
+            $('#upload').text('Add Photo')
+        } else {
+            $('#upload').text('Photo Uploaded Successfully!')
+        }
+    });
+
     $('#photos-icon, #upload').on('click', function () {
         $('#input-upload').click();
     });

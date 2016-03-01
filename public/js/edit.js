@@ -1,4 +1,13 @@
 $(document).ready(function () {
+    $('#img-upload').on('change', function (event) {
+        var val = $(this).val().trim();
+        if (val === '') {
+            $('#img-upload-btn').text('Add Photo')
+        } else {
+            $('#img-upload-btn').text('Photo Uploaded Successfully!')
+        }
+    });
+
     function makeInput($element) {
         var $container = $('<div class="input-group">'+
             '<input type="text" class="form-control">'+
