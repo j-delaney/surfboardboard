@@ -38,3 +38,34 @@ body, html {
 .fa-home {
 	color: #ffffff;
 }
+
+#marginsSide {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#modal {
+    color: black;
+    text-align: center;
+}
+
+#faces {
+    font-size: 3em;
+    text-align: center;
+}
+
+#faces i {
+    color: #5b5b5b;
+}
+
+.fa.selected {
+    color: green !important;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+#submit-satisfaction {
+    padding-top: 10px;
+}

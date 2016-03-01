@@ -3,8 +3,8 @@
     width: 100px;
     height: 200px;
     background-position: center;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     /*background: url('/img/rentgear.png') no-repeat left bottom ; */
     height: 250px;
     width: 100%;
@@ -16,10 +16,6 @@
     padding-left: 30px;
     position: relative;
     padding-top: 20px;
-}
-
-#main-img h1 {
-    line-height: 250px;
 }
 
 #after-img {
@@ -34,28 +30,21 @@
     color: #979797;
 }
 
-#StepSubtitle {
+.step-subtitle {
     display: block;
     color: grey;
     margin-top: -7px;
 }
 
-#StepHeader {
+.step-header {
     display: block;
 }
 
-#steps-bar {
-    width: 100%;
-    height: 40px;
-    background-color: white;
-}
-
 #top-bar-steps {
-	background: url('/img/searchresults.png') no-repeat left center;
+    background: url('/img/searchresults.png') no-repeat left center;
     height: 60px;
     padding: 5px;
     font-size: 24px;
-  /*  position: fixed;*/
     width: 100%;
     top: 0;
     left: 0;
@@ -67,11 +56,7 @@
 }
 
 .fa-home {
-	color: white;
-}
-
-#back-arrow {
-    float: left;
+    color: white;
 }
 
 #add-photos {
@@ -90,7 +75,7 @@
 }
 
 #input-upload {
-  display: none;
+    display: none;
 }
 
 #upload {
@@ -102,22 +87,7 @@
     padding: 20px;
 }
 
-#input {
-    width: 100%;
-    color: grey;
-}
-
-#input-price {
-    width: 75px;
-    display: inline;
-}
-
-#inline {
-    display: inline;
-    color: grey;
-}
-
-#request-to-rent {
+#post-listing {
     display: block;
     width: 100%;
     text-align: center;
@@ -129,10 +99,9 @@
     color: white;
     line-height: 50px;
     font-size: 20px;
-    display: none;
 }
 
-#request-to-rent:hover {
+#post-listing:hover {
     color: white;
     text-decoration: none;
 }

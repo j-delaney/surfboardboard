@@ -67,6 +67,12 @@ $(document).ready(function () {
         });
     }
 
+    $('#photos-icon, #img-upload-btn').on('click', function () {
+        $('#img-upload').click();
+    });
+
+    var $form = $('form');
+
     $('.editable').on('click', function (event) {
         if ($(event.target).hasClass('input-group-addon') || $(event.target).hasClass('fa-check')) {
             return;
@@ -89,8 +95,21 @@ $(document).ready(function () {
         $(this).html('').append($container);
         $container.find('input,textarea').focus();
     }).each(function () {
-        $(this).addClass('edit-undone');
-        $(this).text($(this).data('default'));
+        var text = $(this).text().trim();
+        if (text.length) {
+            $(this).addClass('edit-done');
+        } else {
+            $(this).addClass('edit-undone');
+            $(this).text($(this).data('default'));
+        }
+
+        var $input = $('<input type="text" />');
+        var field = $(this).data('field');
+        $input.attr('name', field);
+        $input.attr('id', 'form-' + field);
+
+        $(this).data('input', $input);
+        $form.append($input);
     });
 
     function shake($e) {
@@ -115,6 +134,11 @@ $(document).ready(function () {
         var done = true;
 
         $('.editable').each(function (index, $element) {
+            var $input = $(this).data('input');
+            var val = $(this).text();
+            console.log('Setting', $input, 'to', val);
+            $input.val(val);
+
             if ($(this).hasClass('edit-undone') || $(this).hasClass('edit-in-progess')) {
                 done = false;
                 shake($(this));
@@ -122,26 +146,13 @@ $(document).ready(function () {
         });
 
         if (done) {
-            var data = {};
-            $('.editable').each(function (index, $element) {
-                data[$(this).data('field')] = $(this).text().trim();
-            });
-
-            $.ajax({
-                type: 'POST',
-                url: '/api/create/tent',
-                data: data,
-                success: function (response, textStatus) {
-                    var id = response.id;
-                    window.location.href = '/list-gear/listing-confirmation/' + id;
-                },
-                error: function (response, textStatus) {
-                    if (response.status === 401) {
-                        return alert('You must be logged in');
-                    }
-                    console.log(response);
-                }
-            });
+            $form.submit();
         }
     });
+
+    var $error = $('#errors');
+    if ($error.length) {
+        $.post('/api/track/error', {}, function () {
+        });
+    }
 });

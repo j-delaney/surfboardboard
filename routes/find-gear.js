@@ -12,7 +12,8 @@ module.exports = function (app) {
 
     app.get('/find-gear/results', function (request, response, next) {
         Item.find({
-            type: 'tent'
+            type: 'tent',
+            published: true
         }, function (err, tents) {
             if (err) {
                 throw err;
@@ -31,4 +32,9 @@ module.exports = function (app) {
     app.get('/find-gear/request-confirmation', function (request, response, next) {
         response.render('find-gear/request-confirmation');
     });
+
+    app.get('/find-gear/message', function (request, response, next) {
+        response.render('find-gear/message');
+    });
+
 };

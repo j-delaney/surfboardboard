@@ -16,12 +16,15 @@
 </div>
 
 <div class="container" id="description">
-
-    <h3 class="text-center text-uppercase">Congratulations! <br /> Your Listing has been posted. </h3>
-    <br />
-        <img src="/img/checkmark.png" id="checkmark">
-    <br /> 
-    <p class = "text-center"> You'll be sent an email<br />if anyone wants to rent your gear.</p>
+    <h3 class="text-center text-uppercase">
+        Congratulations! <br/> Your Listing has been posted.
+    </h3>
+    <br/>
+    <img src="/img/checkmark.png" id="checkmark">
+    <br/>
+    <p class="text-center">
+        You'll be sent an email<br/>if anyone wants to rent your gear.
+    </p>
 </div>
 
 <div class="main-btn">
@@ -29,13 +32,68 @@
         View My Listing
     </a>
 </div>
-<br />
+<br/>
 <div class="main-btn">
     <a type="button" href="/">
         Go Back Home
     </a>
 </div>
 
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <h4>Please rate your satisfaction</h4>
+            <div id="faces">
+                <i class="fa fa-frown-o"></i>
+                <i class="fa fa-meh-o"></i>
+                <i class="fa fa-smile-o"></i>
+            </div>
+            <div id="short-answer">
+                <input type="text" class="form-control" placeholder="Any comments?">
+            </div>
+            <div id="submit-satisfaction">
+                <button type="button" class="btn btn-default btn-block" id="sub">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {{#extend "js"}}
     <script src="/js/main.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            $('#modal').modal({});
+
+            var $i = $('#faces').find('i');
+
+            $i.on('click', function () {
+                $('#submit-satisfaction').find('button').removeClass('btn-default').addClass('btn-primary');
+                $i.removeClass('selected');
+                $(this).addClass('selected');
+            });
+
+            $('#sub').on('click', function () {
+                if ($(this).hasClass('btn-default')) {
+                    return shake($i);
+                }
+
+                var rating = '';
+                if ($('#faces').find('.fa-frown-o').hasClass('selected')) {
+                    rating = 'Frown';
+                } else if ($('#faces').find('.fa-meh-o').hasClass('selected')) {
+                    rating = 'Meh';
+                } else if ($('#faces').find('.fa-smile-o').hasClass('selected')) {
+                    rating = 'Smile';
+                }
+
+                $.post('/api/feedback', {
+                    rating: rating,
+                    comment: $('#short-answer').find('input').val(),
+                    path: window.location.pathname
+                }, function () {
+                });
+                $('#modal').modal('hide');
+            });
+        });
+    </script>
 {{/extend}}

@@ -1,72 +1,49 @@
-var data = require('./../data.json');
-
-var Item = require('../models/item');
+var Feedback = require('./../models/feedback');
+var Track = require('./../models/track');
+var util = require('util');
 
 module.exports = function (app) {
-    app.post('/api/create/tent', function (request, response, next) {
-        if (!request.user) {
-            return response.sendStatus(401);
-        }
-
-        var error;
-
-        var item = Item({
-            picture: '/img/upload/items/sundome1.jpg',
-            price: request.body.price,
-            description: request.body.description,
-            city: request.body.city,
-            zip: request.body.zip,
-            title: request.body.title,
-            custom: {
-                people: request.body.people
-            },
-            owner: request.user.id,
-            type: 'tent'
+    app.post('/api/feedback', function (request, response, next) {
+        var feedback = Feedback({
+            rating: request.body.rating || '',
+            comment: request.body.comment || '',
+            path: request.body.path || ''
         });
 
-        error = item.baseValidate();
-        if (error) {
-            return response.status(400).json({
-                error: error
-            });
+        if (request.isAuthenticated()) {
+            feedback.user = request.user.id;
         }
 
-        error = item.tentValidate();
-        if (error) {
-            return response.status(400).json({
-                error: error
-            });
+        if (!util.isNullOrUndefined(request.session.track)) {
+            feedback.session = request.session.track;
         }
 
-        item.save(function (err, item) {
+        feedback.save(function (err, feedback) {
             if (err) {
-                console.error(err);
-                return response.status(500).json({
-                    error: err
-                });
+                throw err;
             }
 
-            return response.status(200).json({
-                id: item.id
-            });
+            return response.status(200);
         });
+    });
 
-        //data.tents.push({
-        //    "id": newId,
-        //    "owner": 0,
-        //    "title": request.body.title,
-        //    "pictures": [
-        //        "/img/upload/items/sundome1.jpg"
-        //    ],
-        //    "people": request.body.holds,
-        //    "price": request.body.price,
-        //    "brand": "Coleman",
-        //    "reviews": {
-        //        "count": 1,
-        //        "stars": 5
-        //    },
-        //    "location": request.body.address,
-        //    "description": request.body.desc
-        //});
+    app.post('/api/track/error', function (request, response, next) {
+        if (!request.session.track) {
+            return response.status(401);
+        }
+
+        Track.findOneAndUpdate({
+            session: request.session.track
+        }, {
+            $inc: {
+                errorRate: 1
+            }
+        }, function (err) {
+            if (err) {
+                throw err;
+            }
+
+            return response.status(200);
+        });
     });
 };

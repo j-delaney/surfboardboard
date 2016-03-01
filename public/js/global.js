@@ -12,6 +12,22 @@ function showMenu() {
     $menuDarkOverlay.one('click', hideMenu);
 }
 
+function shake($e) {
+    $e.css('transform', 'rotate(5deg)');
+    setTimeout(function () {
+        $e.css('transform', 'rotate(-5deg)');
+        setTimeout(function () {
+            $e.css('transform', 'rotate(5deg)');
+            setTimeout(function () {
+                $e.css('transform', 'rotate(-5deg)');
+                setTimeout(function () {
+                    $e.css('transform', 'rotate(0deg)');
+                }, 50);
+            }, 50);
+        }, 50);
+    }, 50);
+}
+
 function hideMenu() {
     $menuDarkOverlay.animate({
         opacity: 0
@@ -25,11 +41,6 @@ function hideMenu() {
 }
 
 $(document).ready(function () {
-    mixpanel.track('page viewed', {
-        'page name' : document.title,
-        'url' : window.location.pathname
-    });
-
     $menuDarkOverlay = $('#menu-dark-overlay');
     $menu = $('#menu');
     $openMenu = $('#open-menu');

@@ -1,0 +1,55 @@
+{{#extend "title"}}
+    Rent Gear - Results
+{{/extend}}
+
+{{#extend "css"}}
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="/css/find-gear/message.css">
+{{/extend}}
+
+<div class="container-fluid" id="top-bar">
+    <div class="pull-left">
+        <a href="/"><i class="fa fa-home"></a></i>
+    </div>
+    <div class="pull-right">
+        <i class="fa fa-bars" id="open-menu"></i>
+    </div>
+</div>
+
+<div id="fixed-img">
+    <h3 class="text-center">Message Owner</h3>
+</div>
+
+<!-- 
+<div class= "col-xs-10 col-sm-10 col-md-10">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">To:</label>
+        <div id="Owner"><p>Owner</p> {{owner.facebook.name}} </div>
+    </div>
+  </div> -->
+
+
+
+<div class="container" id="content">
+    
+    <div class="row"><h5 class="ownerTop" id="To">To: <strong>Owner Name {{owner.facebook.name}}</strong></h5></div>
+
+    <div class="row"><h5 class="owner" id="To">Subject: <strong>Request for... {{tent.title}}</strong> </h5></div>
+
+    <div ><h5 class="owner" id="To">Message:</h5></div>
+
+    <div class="container">
+        <div>
+        <textarea class="form-control placeholder margintop15" rows="8" placeholder="Eg: Hi, my name's Sally the bear. I was hoping to borrow your surfboard from December XX to December XX so I can go surfing with my friends in Del Mar. I'm a pretty swell bear and I'll take good care of it. Hope to hear from you soon!"></textarea></div> 
+    
+
+    <a id="request-to-rent" href="/find-gear/request-confirmation">
+        Send
+    </a>
+
+{{#extend "js"}}
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/results.js"></script>
+{{/extend}}

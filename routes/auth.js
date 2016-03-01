@@ -2,13 +2,18 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var User = require('../models/user');
 
 module.exports = function (app, passport) {
+    var callback = 'http://localhost:3000/auth/facebook/callback';
+    if (app.get('env') !== 'development') {
+        callback = 'https://grizz170.herokuapp.com/auth/facebook/callback'
+    }
+
     app.use(passport.initialize());
     app.use(passport.session());
 
     passport.use(new FacebookStrategy({
             clientID: '437731739750205',
             clientSecret: process.env.FBSECRET,
-            callbackURL: "http://localhost:3000/auth/facebook/callback",
+            callbackURL: callback,
             profileFields: ['id', 'displayName', 'profileUrl', 'email', 'picture.type(large)']
         },
         function (token, refreshToken, profile, done) {
@@ -70,7 +75,7 @@ module.exports = function (app, passport) {
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect: '/profile',
+            successRedirect: '/redirect',
             failureRedirect: '/'
         })
     );

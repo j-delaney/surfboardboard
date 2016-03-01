@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/profile/creation.css"/>
 {{/extend}}
 
-<div class="container-fluid" id="top-bar">
+<div class="container-fluid static" id="top-bar">
     <div class="pull-left">
         <a href="/"><i class="fa fa-home"></a></i>
     </div>
@@ -30,66 +30,67 @@
     </h5>
 </div>
 
-<!-- <div>
-<p id="inline">Name:</p> <input id="input-price" type="text"/>
-</div>
 
-<div>
-<p id="inline">Email:</p> <input id="input-price" type="text"/>
-</div>
-<div>
-<p id="inline">City:</p> <input id="input-price" type="text"/>
-</div>
-<div>
-<p id="inline">Zip:</p> <input id="input-price" type="text"/>
-</div>
- -->
 
 <div class="container">
  <form class="form-horizontal">
  
-  <div class="form-group">
-    <label for="inputName" class="col-sm-2 control-label">Full Name</label>
-    <div class="col-sm-10">
-      <input type="name" class="form-control input-lg" class="form-control" id="inputName" placeholder="Full Name">
-    </div>
-  </div>
-
-   <div class="form-group">
-    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control input-lg" class="form-control" id="inputEmail3" placeholder="Email">
-    </div>
-  </div>
-
-     <div class="form-group">
-    <label for="City" class="col-sm-2 control-label" id="block">Location</label>
-
-        <div class="col-xs-7 col-sm-7 col-md-7">
-            <input type="text" class="form-control input-lg" class="form-control" placeholder="City">
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-3">
-            <input type="text" class="form-control input-lg" class="form-control" placeholder="ZIP">
-        </div>
-    </div>
-
+  <div class= "col-xs-10 col-sm-10 col-md-10">
     <div class="form-group">
-    <label for="inputZIP" class="col-sm-2 control-label" id="block">Phone</label>
-    
+        <label for="inputName" class="col-sm-2 control-label">Full Name</label>
+        <input type="name" class="form-control" id="inputName" placeholder="Full Name">
+    </div>
+  </div>
+
+
+
+   <div class="col-xs-10 col-sm-10 col-md-10" >
+        <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div>
+
+
+  <div class="col-xs-10 col-sm-10 col-md-10" >
+        <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">City</label>
+        <input type="email" class="form-control" id="inputEmail3" placeholder="City">
+    </div>
+  </div>
+
     <div class="col-xs-7 col-sm-7 col-md-7">
-            <input type="text" class="form-control input-lg" class="form-control" placeholder="(123) 456-7890">
+        <div class="form-group">
+            <label for="inputZIP" class="col-sm-2 control-label" id="block">ZIP</label>
+            <input type="text" class="form-control" placeholder="ZIP Code">
         </div>
     </div>
 
-    <label class="col-sm-2 control-label margin-top" id="about">About</label>
-    <label class="col-sm-2 control-label greytext" id="about"> Grizz is all about community and trust. Share a little bit about yourself and your personality. Not only will it enhance your profile, but people will be more likely to rent with you.</label>
-    <textarea class="form-control placeholder margintop15" rows="5" placeholder="Eg: Hi, my name's Sally the bear. My day job is selling seashells by the seashore, but on weekends you can find me tearing up the waves in Del Mar."></textarea>
 
-</form>
+
+
+    <div class="col-xs-7 col-sm-7 col-md-7">
+        <div class="form-group">
+            <label for="inputZIP" class="col-sm-2 control-label" id="block">Phone</label>
+            <input type="text" class="form-control" placeholder="(123) 456-7890">
+        </div>
+    </div>
+    </form>
+</div>
+
+
+<div class="container">
+    <div> <label class="control-label margin-top">About</label>
+    <label class="control-label greytext"> Grizz is all about community and trust. Share a little bit about yourself and your personality. Not only will it enhance your profile, but people will be more likely to rent with you.</label>
+    <textarea class="form-control placeholder margintop15" rows="5" placeholder="Eg: Hi, my name's Sally the bear. My day job is selling seashells by the seashore, but on weekends you can find me tearing up the waves in Del Mar."></textarea></div> 
+    
+<div class="container">
+
+
 
 <button type="button" class="btn btn-primary btn-lg btn-block" id="submit">Save Profile</button>
 
-</div>
+
 
 
 
