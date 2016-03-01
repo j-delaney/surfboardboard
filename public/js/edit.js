@@ -32,6 +32,35 @@ $(document).ready(function () {
         return $container;
     }
 
+    function makeDropdown($element) {
+        var options = $element.data('options');
+        options = options.split('|');
+
+        var optionsHTML = '';
+        for (var i = 0; i < options.length; i++) {
+            var option = options[i];
+            optionsHTML += '<option value="' + option + '">' + option + '</option>';
+        }
+
+        var $container = $('<div class="input-group">' +
+            '<select class="form-control">' +
+            optionsHTML +
+            '</select>' +
+            '<div class="input-group-addon"><i class="fa fa-check"></i></div>' +
+            '</div>');
+
+        // See whether the user has set this once already.
+        if ($element.hasClass('edit-done')) {
+            var val = $element.text();
+            var $option = $container.find('option').filter(function (i, e) {
+                return $(e).text() === val;
+            });
+            $option.prop('selected', true);
+        }
+
+        return $container;
+    }
+
     function makeTextarea($element) {
         var $container = $('<div class="input-group">'+
             '<textarea class="form-control"></textarea>'+
@@ -52,7 +81,7 @@ $(document).ready(function () {
         $doneButton.on('click', function (event) {
             event.preventDefault();
             var $parent = $(this).closest('.editable');
-            var $input = $parent.find('input,textarea');
+            var $input = $parent.find('input,textarea,select');
 
             var val = $input.val().trim();
 
@@ -95,6 +124,8 @@ $(document).ready(function () {
         var $container;
         if ($(this).hasClass('textarea')) {
             $container = makeTextarea($(this));
+        } else if ($(this).data('type') === 'dropdown') {
+            $container = makeDropdown($(this));
         } else {
             $container = makeInput($(this));
         }

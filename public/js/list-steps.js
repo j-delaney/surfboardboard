@@ -26,7 +26,7 @@ $(document).ready(function () {
         var $container = $(this).closest('a');
 
         var done = true;
-        $container.find('input,textarea').each(function () {
+        $container.find('input,textarea,select').each(function () {
             var val = $(this).val().trim();
             if (val === '') {
                 done = false;
@@ -42,7 +42,9 @@ $(document).ready(function () {
 
     $stepsA.on('click', function (event) {
         if (event.target.tagName.toLowerCase() === 'input' ||
-            event.target.tagName.toLowerCase() === 'textarea') {
+            event.target.tagName.toLowerCase() === 'textarea' ||
+            event.target.tagName.toLowerCase() === 'select' ||
+            event.target.tagName.toLowerCase() === 'option') {
             return;
         }
         event.preventDefault();
@@ -50,7 +52,7 @@ $(document).ready(function () {
         hideAllDroppers();
         var $dropper = $(this).children('.dropper');
         $dropper.show();
-        var $inputs = $dropper.find('input,textarea');
+        var $inputs = $dropper.find('input,textarea,select');
         if ($inputs.length) {
             $inputs[0].focus();
         }

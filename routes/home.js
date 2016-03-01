@@ -6,13 +6,14 @@ var lib = require('./lib');
 var util = require('util');
 
 module.exports = function (app) {
-    app.get('/edit', function (request, response, next) {
+    app.get('/edit/:type', function (request, response, next) {
+        var type = request.params['type'];
         if (util.isNullOrUndefined(request.session.newEdit)) {
             request.session.newEdit = (Math.random > 0.5);
         }
 
         if (!request.session.newEdit) {
-            return response.redirect('/list-gear/list-steps');
+            return response.redirect('/list-gear/list-steps/' + type);
         }
 
         request.session.track = Math.floor(Math.random() * 9999999999);
@@ -28,18 +29,22 @@ module.exports = function (app) {
                 throw err;
             }
 
-            response.render('edit');
+            response.render('edit', {
+                type: type
+            });
         });
     });
 
     var uploadFn = lib.upload.single('picture');
-    app.post('/edit', uploadFn, function (request, response, next) {
+    app.post('/edit/:type', uploadFn, function (request, response, next) {
+        var type = request.params['type'];
         var errors;
 
         if (!request.file) {
             return response.render('edit', {
                 errors: ['You must include a picture.'],
-                form: request.body
+                form: request.body,
+                type: type
             });
         }
 
@@ -51,12 +56,18 @@ module.exports = function (app) {
             city: request.body.city,
             zip: request.body.zip,
             title: request.body.title,
-            custom: {
-                people: request.body.people
-            },
-            type: 'tent',
+            custom: {},
+            type: type,
             newEdit: true
         });
+
+        if (type === 'tent') {
+            item.custom.people = request.body.people;
+        } else if (type === 'surfboard') {
+            item.custom.type = request.body.type;
+        } else {
+            return response.status(400);
+        }
 
         if (request.isAuthenticated()) {
             item.published = true;
@@ -69,15 +80,21 @@ module.exports = function (app) {
         if (errors) {
             return response.render('edit', {
                 errors: errors,
-                form: request.body
+                form: request.body,
+                type: type
             });
         }
 
-        errors = item.tentValidate();
+        if (type === 'tent') {
+            errors = item.tentValidate();
+        } else if (type === 'surfboard') {
+            errors = item.surfboardValidate();
+        }
         if (errors) {
             return response.render('edit', {
                 errors: errors,
-                form: request.body
+                form: request.body,
+                type: type
             });
         }
 

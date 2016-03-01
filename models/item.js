@@ -70,10 +70,25 @@ itemSchema.methods.baseValidate = function () {
         errors.push('Type must be set.');
     }
 
-    var types = ['tent'];
+    var types = ['tent', 'surfboard'];
 
     if (types.indexOf(this.type) === -1) {
         errors.push('Invalid type.');
+    }
+
+    if (errors.length) {
+        return errors;
+    }
+
+    return false;
+};
+
+itemSchema.methods.surfboardValidate = function () {
+    var errors = [];
+
+    //Type. Set, not blank
+    if (util.isNullOrUndefined(this.custom.type) || this.custom.type === '') {
+        errors.push('You must set the type of your surfboard.');
     }
 
     if (errors.length) {

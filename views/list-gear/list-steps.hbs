@@ -18,7 +18,7 @@
     <h3 class="steps-head">5 steps to list</h3>
 </div>
 
-<form action="/list-gear/list-steps" method="post" enctype="multipart/form-data">
+<form action="/list-gear/list-steps/{{type}}" method="post" enctype="multipart/form-data">
     <div id="main-img">
         <img id="photos-icon" src="/img/CameraIcon.png">
         <h5 id="add-photos">
@@ -59,19 +59,43 @@
 
 
             <div class="link-list-item">
-                <div class="row">
-                    <div class="col-md-10 col-sm-10 col-xs-10">
-                        <h3 class="step-header">Tent Capacity</h3>
-                        <h4 class="step-subtitle">How many people can your tent hold?</h4>
+                {{#ifEq type 'tent'}}
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                            <h3 class="step-header">Tent Capacity</h3>
+                            <h4 class="step-subtitle">How many people can your tent hold?</h4>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                            <i class="fa fa-square-o"></i>
+                        </div>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                        <i class="fa fa-square-o"></i>
-                    </div>
-                </div>
 
-                <div class="dropper">
-                    <input type="number" name="people" class="form-control" value="{{form.people}}">
-                </div>
+                    <div class="dropper">
+                        <input type="number" name="people" class="form-control"
+                               value="{{form.people}}">
+                    </div>
+                {{/ifEq}}
+                {{#ifEq type 'surfboard'}}
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                            <h3 class="step-header">Surfboard Type</h3>
+                            <h4 class="step-subtitle">What type of surfboard do you have?</h4>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                            <i class="fa fa-square-o"></i>
+                        </div>
+                    </div>
+
+                    <div class="dropper">
+                        <select class="form-control" name="type">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Shortboard">Shortboard</option>
+                            <option value="Midlength">Midlength</option>
+                            <option value="Longboard">Longboard</option>
+                            <option value="Finless">Finless</option>
+                        </select>
+                    </div>
+                {{/ifEq}}
             </div>
 
             <div class="link-list-item">

@@ -61,12 +61,23 @@
                  data-placeholder="Description">{{form.description}}</div>
             </p>
             <p>
+            {{#ifEq type 'tent'}}
                 <strong>Number of people tent holds:</strong>
-            <div class="editable"
-                 data-type="number"
-                 data-field="people"
-                 data-default="Tap to edit number of people tent holds"
-                 data-placeholder="Number of people">{{form.people}}</div>
+                <div class="editable"
+                     data-type="number"
+                     data-field="people"
+                     data-default="Tap to edit number of people tent holds"
+                     data-placeholder="Number of people">{{form.people}}</div>
+            {{/ifEq}}
+            {{#ifEq type 'surfboard'}}
+                <strong>Type of Board:</strong>
+                <div class="editable"
+                     data-type="dropdown"
+                     data-options="Beginner|Shortboard|Midlength|Longboard|Finless"
+                     data-field="type"
+                     data-default="Tap to edit the surfboard's type"
+                     data-placeholder="">{{form.type}}</div>
+            {{/ifEq}}
             </p>
         </div>
     </div>
@@ -91,7 +102,7 @@
     Post Listing
 </div>
 
-<form action="/edit" method="post" style="display: none" enctype="multipart/form-data">
+<form action="/edit/{{type}}" method="post" style="display: none" enctype="multipart/form-data">
     <input type="file" id="img-upload" name="picture" accept="image/*;capture=camera">
 </form>
 
