@@ -9,6 +9,10 @@ var userSchema = new Schema({
         name: String,
         profileUrl: String,
         picture: String
+    },
+    admin: {
+        type: Boolean,
+        default: false
     }
 });
 
