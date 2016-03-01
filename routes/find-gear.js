@@ -31,4 +31,9 @@ module.exports = function (app) {
     app.get('/find-gear/request-confirmation', function (request, response, next) {
         response.render('find-gear/request-confirmation');
     });
+
+    app.get('/find-gear/message', function (request, response, next) {
+        response.render('find-gear/message');
+    });
+
 };
