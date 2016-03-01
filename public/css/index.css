@@ -1,33 +1,41 @@
 body, html {
-    background: url('/img/home.png') no-repeat right bottom fixed;
+    background: url('/img/home4.png') no-repeat right bottom fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
     height: 100%;
-
     color: white;
 }
 
+#description {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 #logo {
-    margin-top: 70px;
+    margin-top: 85px;
     display: block;
 }
 
 
 #choose-adventure {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .main-btn {
     height: 100px;
     line-height: 100px;
-    background-color: rgba(255, 255, 255, 0.10);
+    background-color: rgba(255, 255, 255, 0.1);
     text-align: center;
     width: 100%;
     display: block;
 }
+
 .main-btn a {
     color: white;
     font-size: 2em;
