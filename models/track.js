@@ -10,7 +10,8 @@ var trackSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
-    }
+    },
+    finished: Date
 });
 
 module.exports = mongoose.model('Track', trackSchema);

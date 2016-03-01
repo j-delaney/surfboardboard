@@ -36,7 +36,8 @@ module.exports = function (app) {
                         newEdit: track.newEdit,
                         user: user,
                         item: track.item,
-                        created: track.created
+                        created: track.created,
+                        elapsed: (track.finished - track.created) / 1000
                     };
 
                     Feedback.findOne({

@@ -104,7 +104,8 @@ module.exports = function (app) {
             session: request.session.track
         }, {
             user: request.user.id,
-            item: request.params['id']
+            item: request.params['id'],
+            finished: Date.now()
         }, function (err) {
             if (err) {
                 throw err;

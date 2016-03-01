@@ -11,6 +11,7 @@
     <thead>
     <tr>
         <th>Created</th>
+        <th>Time To Complete</th>
         <th>User</th>
         <th>Item</th>
         <th>New Edit</th>
@@ -24,6 +25,7 @@
     {{#each tracks}}
         <tr>
             <td>{{date created}}</td>
+            <td>{{elapsed}} seconds</td>
             <td><a href="{{user.facebook.profileUrl}}" target="_blank">{{user.facebook.name}}</a>
             </td>
             <td><a href="/view/{{item}}" target="_blank">Link</a></td>
