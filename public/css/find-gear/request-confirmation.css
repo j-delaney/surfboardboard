@@ -38,3 +38,8 @@ body, html {
 .fa-home {
 	color: #ffffff;
 }
+
+#marginsSide {
+    margin-left: 20px;
+    margin-right: 20px;
+}
