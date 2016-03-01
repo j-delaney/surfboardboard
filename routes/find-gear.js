@@ -12,7 +12,8 @@ module.exports = function (app) {
 
     app.get('/find-gear/results', function (request, response, next) {
         Item.find({
-            type: 'tent'
+            type: 'tent',
+            published: true
         }, function (err, tents) {
             if (err) {
                 throw err;

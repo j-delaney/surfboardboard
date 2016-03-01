@@ -11,7 +11,8 @@ var itemSchema = new Schema({
     zip: Number,
     title: String,
     custom: Schema.Types.Mixed,
-    type: String
+    type: String,
+    published: Boolean,
 });
 
 itemSchema.methods.baseValidate = function () {

@@ -31,11 +31,14 @@ module.exports = function (app) {
 
     var uploadFn = upload.single('picture');
     app.post('/edit', uploadFn, function (request, response, next) {
-        if (!request.user) {
-            return response.sendStatus(401);
-        }
-
         var errors;
+
+        if (!request.file) {
+            return response.render('edit', {
+                errors: ['You must include a picture.'],
+                form: request.body
+            });
+        }
 
         var picture = '/' + path.relative('./public', request.file.path);
         var item = Item({
@@ -48,9 +51,15 @@ module.exports = function (app) {
             custom: {
                 people: request.body.people
             },
-            owner: request.user.id,
             type: 'tent'
         });
+
+        if (request.isAuthenticated()) {
+            item.published = true;
+            item.owner = request.user.id;
+        } else {
+            item.published = false;
+        }
 
         errors = item.baseValidate();
         if (errors) {
@@ -73,12 +82,36 @@ module.exports = function (app) {
                 throw err;
             }
 
-            return response.redirect('/list-gear/listing-confirmation/' + item.id);
+            if (request.isAuthenticated()) {
+                return response.redirect('/list-gear/listing-confirmation/' + item.id);
+            } else {
+                request.session.inProgress = item.id;
+                return response.redirect('/auth/facebook');
+            }
         });
     });
 
     app.get('/profile/edit-profile', function (request, response, next) {
         response.render('profile/edit-profile');
+    });
+
+    app.get('/redirect', function (request, response, next) {
+        if (request.session.inProgress) {
+            var id = request.session.inProgress;
+            request.session.inProgress = null;
+            Item.findByIdAndUpdate(id, {
+                published: true,
+                owner: request.user.id
+            }, function (err, item) {
+                if (err) {
+                    throw err;
+                }
+
+                return response.redirect('/list-gear/listing-confirmation/' + item.id);
+            });
+        }
+
+        next();
     });
 
     app.get('/', function (request, response, next) {
