@@ -18,120 +18,124 @@
     <h3 class="steps-head">5 steps to list</h3>
 </div>
 
-<div id="main-img">
-     <img id="photos-icon" src="/img/CameraIcon.png">
-    <h5 id="add-photos">
-        <button id="upload"> Add Photo</button>
-        <input type="file" id="input-upload" accept="image/*;capture=camera">
-    </h5>
-</div>
-
-<div id="after-img">
-    <div class="link-list" id="steps">
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 class="step-header">Write Title</h3>
-                    <h4 class="step-subtitle">Give your listing a descriptive headline</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
-
-            <div class="dropper">
-                <input type="text" id="input-title"/>
-            </div>
-        </a>
-
-
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 class="step-header">Tent Capacity</h3>
-                    <h4 class="step-subtitle">How many people can your tent hold?</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
-
-            <div class="dropper">
-                <!-- <h4 id="input">How many people can your tent hold?</h4> -->
-                <!-- <input id="input-holds" type="text"/> -->
-                <select name="numPeople" id="num-people">
-                    <option value="none">select # of</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="5">6</option>
-                    <option value="5">7</option>
-                    <option value="5">8</option>
-                    <option value="5">9</option>
-                    <option value="5">10+</option>
-        </select>
-                <h4 id="inline">persons</h4>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 class="step-header">Write Description</h3>
-                    <h4 class="step-subtitle">Describe your listing's characteristics</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
-
-            <div class="dropper">
-                <textarea cols="35" rows="5" id="input-desc"></textarea>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 class="step-header">Set Price</h3>
-                    <h4 class="step-subtitle">It's time to make money off that thing!</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
-
-            <div class="dropper">
-                <p id="inline">$</p> <input id="input-price" type="text"/>
-                <p id="inline">per day</p>
-            </div>
-        </a>
-
-        <a href="#">
-            <div class="row">
-                <div class="col-md-10 col-sm-10 col-xs-10">
-                    <h3 class="step-header">Set Pickup Address</h3>
-                    <h4 class="step-subtitle">Where will people pick it up from you?</h4>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2 square-right">
-                    <i class="fa fa-square-o"></i>
-                </div>
-            </div>
-
-            <div class="dropper">
-                <input id="input-address" type="text"/>
-            </div>
-        </a>
-
-
+<form action="/list-gear/list-steps" method="post" enctype="multipart/form-data">
+    <div id="main-img">
+        <img id="photos-icon" src="/img/CameraIcon.png">
+        <h5 id="add-photos">
+            <button id="upload" type="button"> Add Photo</button>
+            <input type="file" name="picture" id="input-upload" accept="image/*;capture=camera">
+        </h5>
     </div>
-</div>
 
-<a id="request-to-rent" href="/list-gear/listing-confirmation">
+    {{#if errors}}
+        <div class="container">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                {{#each errors}}
+                    <p>{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+
+    <div id="after-img">
+        <div class="link-list" id="steps">
+            <div class="link-list-item">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <h3 class="step-header">Write Title</h3>
+                        <h4 class="step-subtitle">Give your listing a descriptive headline</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                        <i class="fa fa-square-o"></i>
+                    </div>
+                </div>
+
+                <div class="dropper">
+                    <input type="text" name="title" class="form-control" value="{{form.title}}"/>
+                </div>
+            </div>
+
+
+            <div class="link-list-item">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <h3 class="step-header">Tent Capacity</h3>
+                        <h4 class="step-subtitle">How many people can your tent hold?</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                        <i class="fa fa-square-o"></i>
+                    </div>
+                </div>
+
+                <div class="dropper">
+                    <input type="number" name="people" class="form-control" value="{{form.people}}">
+                </div>
+            </div>
+
+            <div class="link-list-item">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <h3 class="step-header">Write Description</h3>
+                        <h4 class="step-subtitle">Describe your listing's characteristics</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                        <i class="fa fa-square-o"></i>
+                    </div>
+                </div>
+
+                <div class="dropper">
+                    <textarea name="description"
+                              class="form-control">{{form.description}}</textarea>
+                </div>
+            </div>
+
+            <div class="link-list-item">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <h3 class="step-header">Set Price</h3>
+                        <h4 class="step-subtitle">It's time to make money off that thing!</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                        <i class="fa fa-square-o"></i>
+                    </div>
+                </div>
+
+                <div class="dropper">
+                    <div class="input-group">
+                        <div class="input-group-addon">$</div>
+                        <input type="text" name="price" class="form-control"
+                               placeholder="Price Per Day" value="{{form.price}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="link-list-item">
+                <div class="row">
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <h3 class="step-header">Set Pickup Address</h3>
+                        <h4 class="step-subtitle">Where will people pick it up from you?</h4>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2 square-right">
+                        <i class="fa fa-square-o"></i>
+                    </div>
+                </div>
+
+                <div class="dropper">
+                    <input class="form-control" name="city" placeholder="City" type="text"
+                           value="{{form.city}}"/>
+                    <input class="form-control" name="zip" placeholder="Zip" type="number"
+                           value="{{form.zip}}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div id="post-listing" href="/list-gear/listing-confirmation">
     Post Listing
-</a>
+</div>
 
 
 {{#extend "js"}}

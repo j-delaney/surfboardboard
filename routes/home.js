@@ -1,35 +1,15 @@
 var data = require('./../data.json');
 var Item = require('./../models/item');
 var User = require('./../models/user');
-var multer = require('multer');
-var crypto = require('crypto');
 var path = require('path');
+var lib = require('./lib');
 
 module.exports = function (app) {
     app.get('/edit', function (request, response, next) {
         response.render('edit');
     });
 
-    var storage = multer.diskStorage({
-        destination: function (req, file, cb) {
-            cb(null, './public/img/upload/items');
-        },
-        filename: function (req, file, cb) {
-            crypto.pseudoRandomBytes(16, function (err, raw) {
-                if (err) {
-                    return cb(err);
-                }
-
-                cb(null, raw.toString('hex') + path.extname(file.originalname))
-            });
-        }
-    });
-
-    var upload = multer({
-        storage: storage
-    });
-
-    var uploadFn = upload.single('picture');
+    var uploadFn = lib.upload.single('picture');
     app.post('/edit', uploadFn, function (request, response, next) {
         var errors;
 

@@ -18,10 +18,6 @@
     padding-top: 20px;
 }
 
-#main-img h1 {
-    line-height: 250px;
-}
-
 #after-img {
     margin-top: 0px;
     position: relative;
@@ -63,10 +59,6 @@
     color: white;
 }
 
-#back-arrow {
-    float: left;
-}
-
 #add-photos {
     text-align: center;
     font-size: 125%;
@@ -95,22 +87,7 @@
     padding: 20px;
 }
 
-#input {
-    width: 100%;
-    color: grey;
-}
-
-#input-price {
-    width: 75px;
-    display: inline;
-}
-
-#inline {
-    display: inline;
-    color: grey;
-}
-
-#request-to-rent {
+#post-listing {
     display: block;
     width: 100%;
     text-align: center;
@@ -122,10 +99,9 @@
     color: white;
     line-height: 50px;
     font-size: 20px;
-    display: none;
 }
 
-#request-to-rent:hover {
+#post-listing:hover {
     color: white;
     text-decoration: none;
 }

@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    $stepsA = $('#steps').children('a');
+    $stepsA = $('#steps').children('.link-list-item');
+
+    $('#photos-icon, #upload').on('click', function () {
+        $('#input-upload').click();
+    });
 
     function hideAllDroppers() {
         $stepsA.each(function (index, elem) {
@@ -10,29 +14,28 @@ $(document).ready(function () {
     }
 
     $stepsA.find('input,textarea').on('input', function (event) {
-        var val = $(this).val().trim();
-        if (val === '') {
-            $(this).closest('a').find('i').removeClass('fa-check-square-o').addClass('fa-square-o');
-        } else {
-            var done = true;
-            $stepsA.find('input,textarea').each(function (index, element) {
-                if ($(this).val().trim() === '') {
-                    done = false;
-                }
-            });
+        var $container = $(this).closest('a');
 
-            $(this).closest('a').find('i').removeClass('fa-square-o').addClass('fa-check-square-o');
-
-            if (done) {
-                $('#request-to-rent').show();
-            } else {
-                $('#request-to-rent').hide();
+        var done = true;
+        $container.find('input,textarea').each(function () {
+            var val = $(this).val().trim();
+            if (val === '') {
+                done = false;
             }
-        }
+        });
 
+        if (done) {
+            $(this).closest('a').find('i').addClass('fa-check-square-o');
+        } else {
+            $(this).closest('a').find('i').removeClass('fa-check-square-o');
+        }
     });
 
     $stepsA.on('click', function (event) {
+        if (event.target.tagName.toLowerCase() === 'input' ||
+            event.target.tagName.toLowerCase() === 'textarea') {
+            return;
+        }
         event.preventDefault();
 
         hideAllDroppers();
@@ -46,23 +49,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $('#request-to-rent').on('click', function (event) {
-        event.preventDefault();
-
-        $('#request-to-rent').hide();
-        var data = {
-            title: $('#input-title').val().trim(),
-            desc: $('#input-desc').val().trim(),
-            price: $('#input-price').val().trim(),
-            address: $('#input-address').val().trim(),
-            holds: $('#input-holds').val().trim()
-        };
-
-        console.log(data);
-
-        $.post('/api/list', data, function (response, textStatus) {
-            var id = response.id;
-            window.location.href = '/list-gear/listing-confirmation/' + id;
-        });
+    $('#post-listing').on('click', function () {
+        $('form').submit();
     });
 });
