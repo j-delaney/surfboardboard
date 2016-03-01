@@ -6,7 +6,8 @@ var async = require('async');
 
 module.exports = function (app) {
     app.get('/admin/analytics', function (request, response, next) {
-        if (!request.isAuthenticated || !request.user.admin) {
+        if (!request.isAuthenticated() || !request.user.admin) {
+            console.error('Not logged in');
             return response.status(401);
         }
 
