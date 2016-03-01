@@ -149,4 +149,10 @@ $(document).ready(function () {
             $form.submit();
         }
     });
+
+    var $error = $('#errors');
+    if ($error.length) {
+        $.post('/api/track/error', {}, function () {
+        });
+    }
 });

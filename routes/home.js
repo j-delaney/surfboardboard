@@ -1,11 +1,35 @@
 var Item = require('./../models/item');
+var Track = require('./../models/track');
 var User = require('./../models/user');
 var path = require('path');
 var lib = require('./lib');
+var util = require('util');
 
 module.exports = function (app) {
     app.get('/edit', function (request, response, next) {
-        response.render('edit');
+        if (util.isNullOrUndefined(request.session.newEdit)) {
+            request.session.newEdit = (Math.random > 0.5);
+        }
+
+        if (!request.session.newEdit) {
+            return response.redirect('/list-gear/list-steps');
+        }
+
+        request.session.track = Math.floor(Math.random() * 9999999999);
+
+        var track = Track({
+            session: request.session.track,
+            errorRate: 0,
+            newEdit: true
+        });
+
+        track.save(function (err, track) {
+            if (err) {
+                throw err;
+            }
+
+            response.render('edit');
+        });
     });
 
     var uploadFn = lib.upload.single('picture');

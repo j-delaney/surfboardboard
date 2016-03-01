@@ -52,4 +52,10 @@ $(document).ready(function () {
     $('#post-listing').on('click', function () {
         $('form').submit();
     });
+
+    var $error = $('#errors');
+    if ($error.length) {
+        $.post('/api/track/error', {}, function () {
+        });
+    }
 });
