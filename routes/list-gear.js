@@ -75,7 +75,7 @@ module.exports = function (app) {
 
     app.get('/list-gear/list-steps', function (request, response, next) {
         if (util.isNullOrUndefined(request.session.newEdit)) {
-            request.session.newEdit = (Math.random > 0.5);
+            request.session.newEdit = (Math.random() > 0.5);
         }
 
         if (request.session.newEdit) {
