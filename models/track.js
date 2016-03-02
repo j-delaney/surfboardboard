@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 var trackSchema = new Schema({
     session: Number,
+    cookieSession: String,
     errorRate: Number,
     newEdit: Boolean, // Whether it was made with the new /edit page
     user: Schema.Types.ObjectId,

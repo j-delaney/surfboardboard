@@ -83,6 +83,17 @@ itemSchema.methods.baseValidate = function () {
     return false;
 };
 
+itemSchema.methods.customValidate = function () {
+    switch (this.type) {
+        case 'tent':
+            return this.tentValidate();
+        case 'surfboard':
+            return this.surfboardValidate();
+        default:
+            return ['Type not found!'];
+    }
+};
+
 itemSchema.methods.surfboardValidate = function () {
     var errors = [];
 

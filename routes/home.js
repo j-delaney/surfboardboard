@@ -20,9 +20,14 @@ module.exports = function (app) {
 
         var track = Track({
             session: request.session.track,
+            cookieSession: request.session.id,
             errorRate: 0,
             newEdit: true
         });
+
+        if (request.isAuthenticated()) {
+            track.user = request.user.id;
+        }
 
         track.save(function (err, track) {
             if (err) {
