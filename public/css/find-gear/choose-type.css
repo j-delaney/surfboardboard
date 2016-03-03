@@ -1,7 +1,9 @@
-
 #main-img {
-    background: url('/img/rentgear.png') no-repeat left bottom;
-    height: 250px;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.8), 
+      rgba(0, 0, 0, 0.1)
+    ), url('/img/half-dome-night.jpg') no-repeat center center;
+    height: 150px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -9,17 +11,81 @@
     z-index: 25;
     color: white;
     padding-left: 30px;
-}
-
-#main-img h1 {
-    line-height: 250px;
+    text-align: center;
 }
 
 #after-img {
-    margin-top: 250px;
+    margin-top: 220px;
     position: relative;
 }
 
-#header-select {
-    font-size: 27px;
+#rent-gear li {
+    padding: 20px;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 2em;
+    vertical-align: middle;
+}
+
+#rent-gear li a {
+    color: black;
+}
+
+#rent-gear li a i {
+    margin-right: 10px;
+}
+
+#rent-gear li a:hover {
+    text-decoration: none;;
+}
+
+#rent-gear li:hover {
+    background: #dbdbdb;
+    cursor: pointer;
+}
+
+#top-bar a {
+    color: #FFFFFF
+}
+
+#title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#prompt {
+    display: block;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 1px solid #a1c900;
+    vertical-align: middle;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    left: 0;
+    top: 140px;
+    z-index: 1;
+}
+
+#promptText {
+   font-weight: bold;
+   font-size: 1.75em;
+   color: #004e00; 
+   text-align: center;
+}
+
+.link-list a {
+    color: #000000;
+    display: block;
+    padding: 20px;
+    margin: 0;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 2em;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #e3e2d8;
+}
+
+.link-list a i {
+    margin-right: 10px;
 }
