@@ -40,11 +40,6 @@ app.use(session({
     })
 }));
 
-app.use(function (request, response, next) {
-    response.locals.user = request.user;
-    next();
-});
-
 var routes = require('./routes')(app, passport);
 
 // catch 404 and forward to error handler
