@@ -2,8 +2,10 @@ $(document).ready(function () {
     $('#img-upload').on('change', function (event) {
         var val = $(this).val().trim();
         if (val === '') {
+            $('#photo-edit').removeClass('edit-done').addClass('edit-undone');
             $('#img-upload-btn').text('Add Photo')
         } else {
+            $('#photo-edit').addClass('edit-done').removeClass('edit-undone');
             $('#img-upload-btn').text('Photo Uploaded!')
         }
     });
@@ -68,6 +70,11 @@ $(document).ready(function () {
             '</div>');
 
         var $textarea = $container.find('textarea');
+
+        // See whether the user has set this once already.
+        if ($element.hasClass('edit-done')) {
+            $textarea.text($element.text())
+        }
 
         var placeholder = $element.data('placeholder');
         $textarea.attr('placeholder', placeholder);
@@ -184,6 +191,11 @@ $(document).ready(function () {
                 shake($(this));
             }
         });
+
+        if ($('#photo-edit').hasClass('edit-undone')) {
+            done = false;
+            shake($('#photo-edit'));
+        }
 
         if (done) {
             $form.submit();

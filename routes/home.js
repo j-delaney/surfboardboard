@@ -6,6 +6,16 @@ var lib = require('./lib');
 var util = require('util');
 
 module.exports = function (app) {
+    app.get('/admin/flip', function (request, response, next) {
+        if (request.session.newEdit) {
+            request.session.newEdit = false;
+        } else {
+            request.session.newEdit = true;
+        }
+
+        return response.send(request.session.newEdit);
+    });
+
     app.get('/edit/:type', function (request, response, next) {
         var type = request.params['type'];
         if (util.isNullOrUndefined(request.session.newEdit)) {

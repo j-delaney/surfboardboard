@@ -14,12 +14,6 @@
         <i class="fa fa-bars" id="open-menu"></i>
     </div>
 </div>
-<div id="product-img">
-    <img id="photos-icon" src="/img/CameraIcon.png">
-    <h5 id="add-photos">
-        <button id="img-upload-btn">Add Photo</button>
-    </h5>
-</div>
 
 {{#if errors}}
     <div class="container" id="errors">
@@ -34,6 +28,15 @@
 {{/if}}
 
 <div class="container-fluid">
+    <div class="row">
+        <div class="edit-undone" id="photo-edit">
+            <img id="photos-icon" src="/img/CameraIcon.png">
+            <h5 id="add-photos">
+                <button id="img-upload-btn">Add Photo</button>
+            </h5>
+        </div>
+    </div>
+
     <div class="row" id="attributes">
         <div class="col-md-8 col-sm-8 col-xs-8">
             <div class="editable"

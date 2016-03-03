@@ -148,6 +148,10 @@
     display: block;
 }
 
+#photo-edit {
+    text-align: center;
+}
+
 #product-img input {
     display: none;
 }
