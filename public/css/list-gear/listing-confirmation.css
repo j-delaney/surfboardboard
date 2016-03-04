@@ -1,7 +1,7 @@
 body, html {
     background: linear-gradient(
       rgba(0, 0, 0, 0.4), 
-      rgba(0, 0, 0, 0.3)
+      rgba(0, 0, 0, 0.2)
     ), url('/img/campfire.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -20,7 +20,7 @@ body, html {
 .main-btn {
     height: 80px;
     line-height: 80px;
-    background-color: rgba(255, 255, 255, 0.10);
+    background-color: rgba(255, 255, 255, 0.15);
     text-align: center;
     width: 100%;
     display: block;

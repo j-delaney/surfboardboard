@@ -1,5 +1,8 @@
 body, html {
-    background: url('/img/home4.png') no-repeat right bottom fixed;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.25), 
+      rgba(0, 0, 0, 0.15)
+    ), url('/img/home.png') no-repeat right bottom fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,13 +15,13 @@ body, html {
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 250px;
+    width: 265px;
     text-align: center;
     color: #FFFFFF;
 }
 
 #logo {
-    margin-top: 60px;
+    margin-top: 50px;
     display: block;
 }
 
@@ -29,8 +32,8 @@ body, html {
 
 .main-btn {
     margin-top: 30px;
-    height: 100px;
-    line-height: 100px;
+    height: 85px;
+    line-height: 85px;
     background-color: rgba(255, 255, 255, 0.15);
     text-align: center;
     width: 100%;
