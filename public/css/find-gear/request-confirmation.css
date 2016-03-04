@@ -1,5 +1,5 @@
 body, html {
-    background: url('/img/listing-message.png') no-repeat left top fixed;
+    background: url('/img/tent-mountain.png') no-repeat left top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,8 +16,8 @@ body, html {
 }
 
 .main-btn {
-    height: 100px;
-    line-height: 100px;
+    height: 80px;
+    line-height: 80px;
     background-color: rgba(255, 255, 255, 0.10);
     text-align: center;
     width: 100%;
@@ -25,7 +25,7 @@ body, html {
 }
 
 #checkmark {
-    width: 250px; 
+    width: 200px; 
     margin: 0 auto;
     display: block;
 }
@@ -40,32 +40,8 @@ body, html {
 }
 
 #marginsSide {
-    margin-left: 20px;
-    margin-right: 20px;
-}
 
-#modal {
-    color: black;
-    text-align: center;
-}
-
-#faces {
-    font-size: 3em;
-    text-align: center;
-}
-
-#faces i {
-    color: #5b5b5b;
-}
-
-.fa.selected {
-    color: green !important;
-}
-
-.modal-content {
-    padding: 10px;
-}
-
-#submit-satisfaction {
-    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
