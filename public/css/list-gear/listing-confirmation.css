@@ -1,0 +1,73 @@
+body, html {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.3)
+    ), url('/img/campfire.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    color: #ffffff;
+}
+
+#description {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;;
+}
+
+.main-btn {
+    height: 80px;
+    line-height: 80px;
+    background-color: rgba(255, 255, 255, 0.10);
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+#checkmark {
+    width: 175px; 
+    margin: 0 auto;
+    display: block;
+}
+
+.main-btn a {
+    color: white;
+    font-size: 2em;
+}
+
+.fa-home {
+	color: #ffffff;
+}
+
+#marginsSide {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#modal {
+    color: black;
+    text-align: center;
+}
+
+#faces {
+    font-size: 3em;
+    text-align: center;
+}
+
+#faces i {
+    color: #5b5b5b;
+}
+
+.fa.selected {
+    color: green !important;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+#submit-satisfaction {
+    padding-top: 10px;
+}

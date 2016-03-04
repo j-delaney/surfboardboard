@@ -1,6 +1,6 @@
 #main-img {
     background: linear-gradient(
-      rgba(0, 0, 0, 0.8), 
+      rgba(0, 0, 0, 0.7), 
       rgba(0, 0, 0, 0.1)
     ), url('/img/half-dome-night.jpg') no-repeat center center;
     height: 150px;
