@@ -1,5 +1,5 @@
 body, html {
-    background: url('/img/tent-mountain.png') no-repeat left top fixed;
+    background: url('/img/tent-mountain.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
