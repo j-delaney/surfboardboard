@@ -1,6 +1,9 @@
 #main-img {
-    background: url('/img/rentgear.png') no-repeat left bottom;
-    height: 80px;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.0)
+    ), url('/img/half-dome-night.jpg') no-repeat center center;
+    height: 150px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -8,11 +11,11 @@
     z-index: 25;
     color: white;
     padding-left: 30px;
-
+    text-align: center;
 }
 
 #after-img {
-    margin-top: 175px;
+    margin-top: 220px;
     position: relative;
 }
 
@@ -41,7 +44,7 @@
 }
 
 #top-bar a {
-	color: #FFFFFF
+    color: #FFFFFF
 }
 
 #title {
@@ -52,22 +55,23 @@
 
 #prompt {
     display: block;
-    padding: 15px;
+    padding: 10px;
     margin: 0;
-    border-bottom: 2px solid #000000;
+    border-bottom: 1px solid #a1c900;
     vertical-align: middle;
     position: fixed;
     width: 100%;
     background-color: white;
     left: 0;
-    top: 80px;
+    top: 140px;
     z-index: 1;
 }
 
 #promptText {
    font-weight: bold;
-   font-size: 2em;
-   color: black; 
+   font-size: 1.75em;
+   color: #004e00; 
+   text-align: center;
 }
 
 .link-list a {
@@ -79,15 +83,9 @@
     font-size: 2em;
     vertical-align: middle;
     text-align: center;
-    background-color: #EFEFEF;
+    background-color: #e3e2d8;
 }
 
 .link-list a i {
-    margin-right: 20px;
-}
-
-.link-list a:hover {
-    color: #000000;
-    text-decoration: none;
-    cursor: pointer;
+    margin-right: 10px;
 }
