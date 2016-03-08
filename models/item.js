@@ -70,7 +70,17 @@ itemSchema.methods.baseValidate = function () {
         errors.push('Type must be set.');
     }
 
-    var types = ['tent', 'surfboard'];
+    var types = [
+        'tent',
+        'surfboard',
+        'kayak',
+        'backpack',
+        'camping-stove',
+        'bear-cannister',
+        'sleeping-bag',
+        'sleeping-pad',
+        'canoe'
+    ];
 
     if (types.indexOf(this.type) === -1) {
         errors.push('Invalid type.');
@@ -90,7 +100,7 @@ itemSchema.methods.customValidate = function () {
         case 'surfboard':
             return this.surfboardValidate();
         default:
-            return ['Type not found!'];
+            return [];
     }
 };
 
