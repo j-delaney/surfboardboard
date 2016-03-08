@@ -10,9 +10,11 @@ module.exports = function (app) {
         response.render('find-gear/prelim-filter');
     });
 
-    app.get('/find-gear/results', function (request, response, next) {
+    app.get('/find-gear/results/:type', function (request, response, next) {
+        var type = request.params['type'];
+
         Item.find({
-            type: 'tent',
+            type: type,
             published: true
         }, function (err, tents) {
             if (err) {
