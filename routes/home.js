@@ -18,21 +18,12 @@ module.exports = function (app) {
 
     app.get('/edit/:type', function (request, response, next) {
         var type = request.params['type'];
-        if (util.isNullOrUndefined(request.session.newEdit)) {
-            request.session.newEdit = (Math.random > 0.5);
-        }
-
-        if (!request.session.newEdit) {
-            return response.redirect('/list-gear/list-steps/' + type);
-        }
-
         request.session.track = Math.floor(Math.random() * 9999999999);
 
         var track = Track({
             session: request.session.track,
             cookieSession: request.session.id,
-            errorRate: 0,
-            newEdit: true
+            errorRate: 0
         });
 
         if (request.isAuthenticated()) {

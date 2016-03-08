@@ -89,36 +89,7 @@ module.exports = function (app) {
 
     app.get('/list-gear/list-steps/:type', function (request, response, next) {
         var type = request.params['type'];
-        if (util.isNullOrUndefined(request.session.newEdit)) {
-            request.session.newEdit = (Math.random() > 0.5);
-        }
-
-        if (request.session.newEdit) {
-            return response.redirect('/edit/' + type);
-        }
-
-        request.session.track = Math.floor(Math.random() * 9999999999);
-
-        var track = Track({
-            session: request.session.track,
-            cookieSession: request.session.id,
-            errorRate: 0,
-            newEdit: false
-        });
-
-        if (request.isAuthenticated()) {
-            track.user = request.user.id;
-        }
-
-        track.save(function (err, track) {
-            if (err) {
-                throw err;
-            }
-
-            response.render('list-gear/list-steps', {
-                type: type
-            });
-        });
+        return response.redirect('/edit/' + type);
     });
 
     app.get('/list-gear/listing-confirmation/:id', function (request, response, next) {
