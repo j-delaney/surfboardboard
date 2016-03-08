@@ -27,6 +27,28 @@ module.exports = function (app) {
         });
     });
 
+    app.post('/api/photo', function (request, response, next) {
+        request.file('picture').upload({
+            adapter: require('skipper-s3'),
+            key: process.env.S3KEY,
+            secret: process.env.S3SECRET,
+            bucket: 'grizz170',
+            endpoint: 's3-us-west-1.amazonaws.com',
+            headers: {
+                'x-amz-acl': 'public-read'
+            }
+        }, function (err, uploadedFiles) {
+            if (err) {
+                throw err;
+            }
+
+
+            return response.status(200).json({
+                picture: uploadedFiles[0].extra.Location
+            });
+        });
+    });
+
     app.post('/api/track/error', function (request, response, next) {
         if (!request.session.track) {
             return response.status(401);

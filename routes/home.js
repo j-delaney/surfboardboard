@@ -41,22 +41,12 @@ module.exports = function (app) {
         });
     });
 
-    var uploadFn = lib.upload.single('picture');
-    app.post('/edit/:type', uploadFn, function (request, response, next) {
+    app.post('/edit/:type', function (request, response, next) {
         var type = request.params['type'];
         var errors;
 
-        if (!request.file) {
-            return response.render('edit', {
-                errors: ['You must include a picture.'],
-                form: request.body,
-                type: type
-            });
-        }
-
-        var picture = '/' + path.relative('./public', request.file.path);
         var item = Item({
-            picture: picture,
+            picture: request.body.picture,
             price: request.body.price,
             description: request.body.description,
             city: request.body.city,
@@ -71,8 +61,6 @@ module.exports = function (app) {
             item.custom.people = request.body.people;
         } else if (type === 'surfboard') {
             item.custom.type = request.body.type;
-        } else {
-            return response.status(400);
         }
 
         if (request.isAuthenticated()) {
@@ -104,7 +92,9 @@ module.exports = function (app) {
             });
         }
 
+        console.log('Time to save!');
         item.save(function (err, item) {
+            console.log('err', err);
             if (err) {
                 throw err;
             }

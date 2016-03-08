@@ -37,6 +37,7 @@
             <img id="photos-icon" src="/img/CameraIcon.png">
             <h5 id="add-photos">
                 <button id="img-upload-btn">Add Photo</button>
+                <input class="hidden" type="file" id="img-upload" accept="image/*;capture=camera">
             </h5>
         </div>
     </div>
@@ -109,8 +110,8 @@
     Post Listing
 </div>
 
-<form action="/edit/{{type}}" method="post" style="display: none" enctype="multipart/form-data">
-    <input type="file" id="img-upload" name="picture" accept="image/*;capture=camera">
+<form action="/edit/{{type}}" method="post" style="display: none">
+    <input type="text" id="img-url" name="picture">
 </form>
 
 {{#extend "js"}}

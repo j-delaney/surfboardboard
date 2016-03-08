@@ -6,13 +6,36 @@ $(document).ready(function () {
             $('#img-upload-btn').text('Add Photo')
         } else {
             $('#photo-edit').addClass('edit-done').removeClass('edit-undone');
-            $('#img-upload-btn').text('Photo Uploaded!')
+            $('#img-upload-btn').text('Change Photo');
+
+            var file = $(this)[0].files[0];
+            var formData = new FormData();
+            formData.append('picture', file, file.name);
+            $.ajax({
+                url: '/api/photo',
+                type: 'post',
+                xhr: function () {
+                    return $.ajaxSettings.xhr();
+                },
+                // Ajax events
+                success: function (data) {
+                    $('#photo-edit').css('background-image', 'url(' + data.picture + ')');
+                    $('#img-url').val(data.picture);
+                },
+                error: function () {
+                    console.error(arguments);
+                },
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false
+            });
         }
     });
 
     function makeInput($element) {
-        var $container = $('<div class="input-group">'+
-            '<input type="text" class="form-control">'+
+        var $container = $('<div class="input-group">' +
+            '<input type="text" class="form-control">' +
             '<div class="input-group-addon"><i class="fa fa-check"></i></div>' +
             '</div>');
 
@@ -64,8 +87,8 @@ $(document).ready(function () {
     }
 
     function makeTextarea($element) {
-        var $container = $('<div class="input-group">'+
-            '<textarea class="form-control"></textarea>'+
+        var $container = $('<div class="input-group">' +
+            '<textarea class="form-control"></textarea>' +
             '<div class="input-group-addon"><i class="fa fa-check"></i></div>' +
             '</div>');
 
@@ -183,7 +206,6 @@ $(document).ready(function () {
         $('.editable').each(function (index, $element) {
             var $input = $(this).data('input');
             var val = $(this).text();
-            console.log('Setting', $input, 'to', val);
             $input.val(val);
 
             if ($(this).hasClass('edit-undone') || $(this).hasClass('edit-in-progess')) {
