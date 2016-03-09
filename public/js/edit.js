@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    //$('#fb-modal').modal('show');
+
     $('#img-upload').on('change', function (event) {
         var val = $(this).val().trim();
         if (val === '') {
