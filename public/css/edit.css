@@ -50,7 +50,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #FF3366;
+    background-color: #98C037;
     color: white;
     line-height: 50px;
     font-size: 20px;
@@ -88,7 +88,7 @@
 }
 
 #per {
-    color: green;
+    /*color: green;*/
     font-size: 14px;
 }
 
@@ -146,7 +146,7 @@
 }
 
 #photo-edit {
-    margin-top: 75px;
+    margin-top: 64px;
     text-align: center;
 }
 
