@@ -1,6 +1,7 @@
 #view-img {
     height: 200px;
     text-align: center;
+    margin-top: 64px;
 }
 
 #view-img img {
@@ -56,7 +57,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #FF3366;
+    background-color: #98C037;
     color: white;
     line-height: 50px;
     font-size: 20px;
@@ -95,7 +96,7 @@
 }
 
 #price {
-    color: #48B424;
+    color: #0B6E4F;
     display: inline-block;
     margin-right: 15px;
     font-size: 25px;
@@ -103,6 +104,7 @@
 }
 
 #per {
-    color: #48B424;
+    color: #0B6E4F
+;
     font-size: 14px;
 }

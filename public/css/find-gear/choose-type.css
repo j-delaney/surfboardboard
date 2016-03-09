@@ -108,38 +108,48 @@
 }
 
 #tent {
-    background: url('/img/tent.png');
+    background: url('/img/tent.png') no-repeat;
+    background-size: cover;
 }
 
 #surfboard {
-    background: url('/img/surfboard.png');
+    background: url('/img/surfboard.png') no-repeat;
+    background-size: cover;
     margin-top: 2px;
 }
 
 #kayak {
-    background: url('/img/kayak.png');
+    background: url('/img/kayak.png') no-repeat;
+    background-size: cover;
 }
 
 #backpack {
-    background: url('/img/backpack.png');
+    background: url('/img/backpack.png') no-repeat;
+    background-size: cover;
 }
 
 #stove {
-    background: url('/img/stove.png');
+    background: url('/img/stove.png') no-repeat;
+    background-size: cover;
 }
 
 #sleepingbag {
-    background: url('/img/sleepingbags.png');
+    background: url('/img/sleepingbags.png') no-repeat;
+    background-size: cover;
 }
 
 #sleepingpad {
-    background: url('/img/SleepingPad.png');
+    background: url('/img/SleepingPad.png') no-repeat;
+    background-size: cover;
 }
 
 #canoe {
-    background: url('/img/canoe.png');
+    background: url('/img/canoe.png') no-repeat;
+    background-size: cover;
 }
 
 #canister {
-    background: url('/img/canister.png');
+    background: url('/img/canister.png') no-repeat;
+    background-size: cover;
 }
+
