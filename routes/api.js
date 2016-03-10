@@ -27,6 +27,12 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/api/is-logged-in', function (request, response, next) {
+        return response.json({
+            loggedIn: request.isAuthenticated()
+        });
+    });
+
     app.post('/api/photo', function (request, response, next) {
         request.file('picture').upload({
             adapter: require('skipper-s3'),

@@ -1,5 +1,13 @@
 $(document).ready(function () {
-    //$('#fb-modal').modal('show');
+    $('#fb-login').on('click', function (event) {
+        $(window).on('focus', function () {
+            $.get('/api/is-logged-in', function (data) {
+                if (data.loggedIn && data.loggedIn === true) {
+                    $form.submit();
+                }
+            });
+        });
+    });
 
     $('#img-upload').on('change', function (event) {
         var val = $(this).val().trim();
@@ -222,7 +230,11 @@ $(document).ready(function () {
         }
 
         if (done) {
-            $form.submit();
+            if (!loggedIn) {
+                $('#fb-modal').modal('show');
+            } else {
+                $form.submit();
+            }
         }
     });
 

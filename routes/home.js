@@ -108,6 +108,11 @@ module.exports = function (app) {
         });
     });
 
+    app.get('/login/edit', function (request, response, next) {
+        request.session.redirectClose = true;
+        return response.redirect('/auth/facebook');
+    });
+
     app.get('/profile/edit-profile', function (request, response, next) {
         response.render('profile/edit-profile');
     });
@@ -126,6 +131,22 @@ module.exports = function (app) {
 
                 return response.redirect('/list-gear/listing-confirmation/' + item.id);
             });
+        } else if (request.session.redirectClose) {
+            request.session.redirectClose = null;
+            return response.status(200).send(`
+            <html>
+                <head></head>
+                <body>
+                    <script>
+                        window.close();
+                    </script>
+                </body>
+            </html>
+            `);
+        } else if (request.session.redirect) {
+            var redirect = request.session.redirect;
+            request.session.redirect = null;
+            return response.redirect(redirect);
         } else {
             return response.redirect('/');
         }
