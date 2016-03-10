@@ -24,7 +24,8 @@ module.exports = function (app) {
             }
 
             response.render('find-gear/results', {
-                tents: tents
+                tents: tents,
+                type: type
             });
         });
     });

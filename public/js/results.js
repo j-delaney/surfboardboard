@@ -47,4 +47,27 @@ $(document).ready(function () {
     $checkoutDateBox.on('click', function (event) {
         $checkoutInput.datepicker('show');
     });
+
+    setupFilters();
 });
+
+function setupFilters() {
+    var $filter = $('#filter');
+
+    $('#filter-btn').on('click', function () {
+        var val = $filter.find('input').val().trim();
+        if (val === '') {
+            $('.listing-box').show();
+        } else {
+            val = Number(val);
+            $('.listing-box').each(function () {
+                var price = $(this).data('price');
+                if (price <= val) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+    });
+}

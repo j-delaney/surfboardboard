@@ -19,23 +19,24 @@
     </div>
 </div>
 
+<div id="push"></div>
+
 <div class="container" id="filter">
-    <div class="input-group input-group-lg" id="product-filter">
-        <span class="input-group-addon" id="sizing-addon1"># of people:</span>
-        <input type="text" class="form-control" placeholder="1" aria-describedby="sizing-addon1">
+    <div class="input-group" id="product-filter">
+        <span class="input-group-addon" id="sizing-addon1">Maximum Price:</span>
+        <input type="number" class="form-control" placeholder="10" aria-describedby="sizing-addon1">
         <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Apply Filter</button>
+        <button class="btn btn-default" id="filter-btn" type="button">Apply Filter</button>
       </span>
     </div>
 </div>
-
 
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-6 col-sm-6 col-xs-6">
             {{#each tents}}
                 {{#if_even @index}}
-                    <a class="listing-box" href="/view/{{id}}">
+                    <a class="listing-box" href="/view/{{id}}" data-price="{{price}}">
                         <img src="{{picture}}" class="img-responsive">
                         <div class="price">${{price}}</div>
                         <p>{{title}}</p>
@@ -46,7 +47,7 @@
         <div class="col-md-6 col-sm-6 col-xs-6">
             {{#each tents}}
                 {{#if_odd @index}}
-                    <a class="listing-box" href="/view/{{id}}">
+                    <a class="listing-box" href="/view/{{id}}" data-price="{{price}}">
                         <img src="{{picture}}" class="img-responsive">
                         <div class="price">${{price}}</div>
                         <p>{{title}}</p>
