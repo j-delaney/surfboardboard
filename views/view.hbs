@@ -32,6 +32,20 @@
             <h4><strong>Description</strong></h4>
             <p>{{tent.description}}</p>
         </div>
+
+        {{#ifEq tent.type 'tent'}}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4><strong>Capacity</strong></h4>
+                <p>{{tent.custom.people}} people</p>
+            </div>
+        {{/ifEq}}
+
+        {{#ifEq tent.type 'surfboard'}}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4><strong>Type</strong></h4>
+                <p>{{tent.custom.type}}</p>
+            </div>
+        {{/ifEq}}
     </div>
 
     <div class="row" id="info">
