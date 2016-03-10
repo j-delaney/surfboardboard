@@ -80,7 +80,7 @@ module.exports = function (app) {
                 var itemURL = `http://grizz170.herokuapp.com/view/${item.id}`;
 
                 var email = new sendgrid.Email({
-                    to: '1letterboy@gmail.com',
+                    to: owner.facebook.email,
                     from: 'no-reply@codesketch.xyz',
                     subject: `Someone wants to rent ${item.title} from you!`,
                     html: `
