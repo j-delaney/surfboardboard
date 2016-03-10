@@ -20,6 +20,7 @@
     "multer": "^1.1.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
+    "sendgrid": "^2.0.0",
     "serve-favicon": "~2.3.0",
     "skipper": "0.5.9",
     "skipper-s3": "0.5.6"

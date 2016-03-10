@@ -3,9 +3,6 @@
 {{/extend}}
 
 {{#extend "css"}}
-    <link rel="stylesheet" href="/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="/css/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/css/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="/css/find-gear/message.css">
 {{/extend}}
 
@@ -19,38 +16,66 @@
     </div>
 </div>
 
-<!-- <div id="fixed-img">
-    <h3 class="text-center">Message Owner</h3>
-</div> -->
+<form action="/find-gear/message/{{item.id}}" method="post">
+    <div class="container" id="content">
+        <div class="row">
+            <h5 class="ownerTop to">To: <strong>{{owner.facebook.name}}</strong></h5>
+        </div>
 
-<!-- 
-<div class= "col-xs-10 col-sm-10 col-md-10">
-    <div class="form-group">
-        <label for="inputName" class="col-sm-2 control-label">To:</label>
-        <div id="Owner"><p>Owner</p> {{owner.facebook.name}} </div>
-    </div>
-  </div> -->
+        <div class="row">
+            <h5 class="owner to">Subject: <strong>Request for {{item.title}}</strong></h5>
+        </div>
 
+        <div><h5 class="owner to">Message:</h5></div>
 
-
-<div class="container" id="content">
-    
-    <div class="row"><h5 class="ownerTop" id="To">To: <strong>Owner Name {{owner.facebook.name}}</strong></h5></div>
-
-    <div class="row"><h5 class="owner" id="To">Subject: <strong>Request for... {{tent.title}}</strong> </h5></div>
-
-    <div ><h5 class="owner" id="To">Message:</h5></div>
-
-    <div class="container">
         <div>
-        <textarea class="form-control placeholder margintop15" rows="8" placeholder="Eg: Hi, my name's Sally the bear. I was hoping to borrow your surfboard from December XX to December XX so I can go surfing with my friends in Del Mar. I'm a pretty swell bear and I'll take good care of it. Hope to hear from you soon!"></textarea></div> 
-    
+        <textarea class="form-control placeholder margintop15" rows="8" name="message"
+                  placeholder="Eg: Hi, my name's Sally the bear. I was hoping to borrow your surfboard from December XX to December XX so I can go surfing with my friends in Del Mar. I'm a pretty swell bear and I'll take good care of it. Hope to hear from you soon!"></textarea>
+        </div>
+    </div>
 
-    <a id="request-to-rent" href="/find-gear/request-confirmation">
+    <button id="request-to-rent">
         Send
-    </a>
+    </button>
+</form>
+
+<div class="modal" tabindex="-1" role="dialog" id="fb-modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <h4>You must login to continue</h4>
+            <a href="/login/edit" target="_blank" class="button" id="fb-login"><i
+                    class="fa fa-facebook-official"></i> Login with
+                Facebook to continue
+            </a>
+        </div>
+    </div>
+</div>
 
 {{#extend "js"}}
-    <script src="/js/jquery-ui.min.js"></script>
-    <script src="/js/results.js"></script>
+    <script>
+        var loggedIn = false;
+            {{#if user}}
+            loggedIn = true;
+            {{/if}}
+
+        $(document).ready(function () {
+            $('#fb-login').on('click', function (event) {
+                $(window).on('focus', function () {
+                    $.get('/api/is-logged-in', function (data) {
+                        if (data.loggedIn && data.loggedIn === true) {
+                            $form.submit();
+                        }
+                    });
+                });
+            });
+
+            $('#request-to-rent').on('click', function () {
+                if (loggedIn) {
+                    $('form').submit();
+                } else {
+                    $('#fb-modal').modal('show');
+                }
+            });
+        });
+    </script>
 {{/extend}}
