@@ -27,7 +27,6 @@
     font-size: 16px;
     padding: 10px;
     font-weight: bold;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -66,3 +65,11 @@
 .fa-home {
 	color: #ffffff;
 }
+
+/*.navText {
+    display: inline;
+    color: red;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}*/
