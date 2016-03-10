@@ -47,7 +47,16 @@ body, html, h1, h2, h3, h4, h5, h6, p {
     z-index: 50;
     color: white;
     background-color: #194F32;
+    text-align: center;
+    font-weight: lighter;
 }
+
+#top-bar h3{
+    display: inline;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
 
 #top-bar-plain {
     padding: 15px;
@@ -58,6 +67,13 @@ body, html, h1, h2, h3, h4, h5, h6, p {
     left: 0;
     z-index: 50;
     color: white;
+    text-align: center;
+}
+
+#top-bar-plain h3 {
+    display: inline;
+    font-weight: lighter;
+    font-size: 20px;
 }
 
 #fixed-img {
